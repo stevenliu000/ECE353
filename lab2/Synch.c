@@ -95,12 +95,18 @@ code Synch
       ----------  Mutex . Init  ----------
 
       method Init ()
-          FatalError ("Unimplemented method")
+          status = 0
+          -- FatalError ("Unimplemented method")
         endMethod
 
       ----------  Mutex . Lock  ----------
 
       method Lock ()
+          var
+
+          oldIntStat = SetInterruptsTo (DISABLED)
+
+          
           FatalError ("Unimplemented method")
         endMethod
 
@@ -113,6 +119,10 @@ code Synch
       ----------  Mutex . IsHeldByCurrentThread  ----------
 
       method IsHeldByCurrentThread () returns bool
+          if heldBy == :
+            return true
+          else:
+            return false
           FatalError ("Unimplemented method")
           return false
         endMethod

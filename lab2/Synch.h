@@ -15,6 +15,8 @@ header Synch
 
   class Mutex
     superclass Object
+    fields
+      heldBY: ptr to Thread
     methods
       Init ()
       Lock ()
@@ -25,6 +27,7 @@ header Synch
   class Condition
     superclass Object
     fields
+      status: int
       waitingThreads: List [Thread]
     methods
       Init ()
