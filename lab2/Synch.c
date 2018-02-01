@@ -105,7 +105,7 @@ code Synch
           var
             oldIntStat: int
           oldIntStat = SetInterruptsTo (DISABLED)
-          if IsHeldByCurrentThread ()
+          if self.IsHeldByCurrentThread ()
             FatalError ("The thread that holds the lock already try to lock the mutex lock")
           endIf
           if heldBy == null
