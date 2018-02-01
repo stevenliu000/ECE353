@@ -21,8 +21,8 @@ code Main
 
       -----  Uncomment any one of the following to perform the desired test  -----
 
-      -- SimpleThreadExample ()
-      MoreThreadExamples ()
+      SimpleThreadExample ()
+      -- MoreThreadExamples ()
       -- TestMutex ()
       -- ProducerConsumer ()
 
