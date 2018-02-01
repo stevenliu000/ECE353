@@ -201,7 +201,7 @@ code Thread
     --
       currentInterruptStatus = DISABLED
       -- printChar ('_')
-      currentThread.Yield ()
+      -- currentThread.Yield ()
       currentInterruptStatus = ENABLED
     endFunction
 

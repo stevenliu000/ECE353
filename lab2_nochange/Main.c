@@ -77,7 +77,7 @@ code Main
       for i = 1 to cnt
         print (currentThread.name)
         nl ()
-        currentThread.Yield ()
+        -- currentThread.Yield ()
       endFor
       ThreadFinish ()
     endFunction
