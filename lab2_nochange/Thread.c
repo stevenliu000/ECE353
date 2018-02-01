@@ -312,14 +312,14 @@ code Thread
                 FatalError ("In Yield, self != currentThread")
               endIf
           oldIntStat = SetInterruptsTo (DISABLED)
-          print ("Yielding ")
-          print (name)
-          print ("\n")
+          -- print ("Yielding ")
+          -- print (name)
+          -- print ("\n")
           nextTh = readyList.Remove ()
           if nextTh
-            print ("About to run ")
-            print (nextTh.name)
-            print ("\n")
+            -- print ("About to run ")
+            -- print (nextTh.name)
+            -- print ("\n")
             if status == BLOCKED
               FatalError ("Status of current thread should be READY or RUNNING")
             endIf
