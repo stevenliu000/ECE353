@@ -309,7 +309,20 @@ code Main
     bufferNextOut: int = 0
     thArray: array [8] of Thread = new array of Thread { 8 of new Thread }
 
+    -- helpers
+    mutex: Mutex
+    prod: Semaphore
+    cons: Semaphore
+
   function ProducerConsumer ()
+
+      -- Initialize helpers
+      mutex = new Mutex
+      mutex.Init()
+      prod = new Semaphore
+      prod.Init(BUFFER_SIZE)
+      cons = new Semaphore
+      cons.Init(0)
 
       print ("     ")
 
@@ -346,7 +359,7 @@ code Main
         c: char = intToChar ('A' + myId - 1)
       for i = 1 to 5
         -- Perform synchroniztion...
-        emptyCount.Down()
+        prod.Down()
         mutex.Lock()
 
         -- Add c to the buffer
@@ -359,7 +372,7 @@ code Main
 
         -- Perform synchronization...
         mutex.Unlock()
-        fillCount.Up()
+        cons.Up()
 
       endFor
     endFunction
@@ -369,7 +382,7 @@ code Main
         c: char
       while true
         -- Perform synchroniztion...
-        fillCount.Down()
+        cons.Down()
         mutex.Lock()
 
         -- Remove next character from the buffer
@@ -382,7 +395,7 @@ code Main
 
         -- Perform synchronization...
         mutex.Unlock()
-        emptyCount.Up()
+        prod.Up()
 
       endWhile
     endFunction
