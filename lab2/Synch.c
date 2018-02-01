@@ -141,9 +141,9 @@ code Synch
       ----------  Mutex . IsHeldByCurrentThread  ----------
 
       method IsHeldByCurrentThread () returns bool
-          if heldBy == currentThread:
+          if heldBy == currentThread
             return true
-          else:
+          else
             return false
           endIf
           FatalError ("Unimplemented method")
