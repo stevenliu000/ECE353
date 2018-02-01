@@ -94,54 +94,55 @@ code Synch
 
        -----------  Mutex . Init  -----------
 
-       method Init ()
-           waitingThreads = new List [Thread]
-         endMethod
+      method Init ()
+          heldBy = null
+          waitingThreads = new List [Thread]
+        endMethod
 
        -----------  Mutex . Lock  -----------
 
-       method Lock ()
-           var
-             oldIntStat: int
-           if heldBy == currentThread
-             FatalError ("Attempt to lock a mutex by a thread already holding it")
-           endIf
-           oldIntStat = SetInterruptsTo (DISABLED)
-           if !heldBy
-             heldBy = currentThread
-           else
-             waitingThreads.AddToEnd (currentThread)
-             currentThread.Sleep ()
-           endIf
-           oldIntStat = SetInterruptsTo (oldIntStat)
-         endMethod
+      method Lock ()
+          var
+            oldIntStat: int
+          oldIntStat = SetInterruptsTo (DISABLED)
+          if IsHeldByCurrentThread ()
+            FatalError ("The thread that holds the lock already try to lock the mutex lock")
+          endIf
+          if heldBy == null
+            heldBy = currentThread
+          else
+            waitingThreads.AddToEnd (currentThread)
+            currentThread.Sleep ()
+          endIf
+          oldIntStat = SetInterruptsTo (oldIntStat)
+        endMethod
 
        -----------  Mutex . Unlock  -----------
 
-       method Unlock ()
-           var
-             oldIntStat: int
-             t: ptr to Thread
-           if heldBy != currentThread
-             FatalError ("Attempt to unlock a mutex by a thread not holding it")
-           endIf
-           oldIntStat = SetInterruptsTo (DISABLED)
-           t = waitingThreads.Remove ()
-           if t
-             t.status = READY
-             readyList.AddToEnd (t)
-             heldBy = t
-           else
-             heldBy = null
-           endIf
-           oldIntStat = SetInterruptsTo (oldIntStat)
-         endMethod
+      method Unlock ()
+          var
+            oldIntStat: int
+            Threadwaitedlongest: ptr to Thread
+          oldIntStat = SetInterruptsTo (DISABLED)
+          if !IsHeldByCurrentThread ()
+            FatalError ("A thread that does not hold the lock try to unlock the mutex lock")
+          endIf
+          if !waitingThreads.IsEmpty()
+            Threadwaitedlongest = waitingThreads.Remove ()
+            Threadwaitedlongest.status = READY
+            readyList.AddToEnd (Threadwaitedlongest)
+            heldBy = Threadwaitedlongest
+          else
+            heldBy = null
+          endIf
+          oldIntStat = SetInterruptsTo (oldIntStat)
+        endMethod
 
        -----------  Mutex . IsHeldByCurrentThread  -----------
 
-       method IsHeldByCurrentThread () returns bool
-           return heldBy == currentThread
-         endMethod
+      method IsHeldByCurrentThread () returns bool
+          return heldBy == currentThread
+        endMethod
 
   endBehavior
 
