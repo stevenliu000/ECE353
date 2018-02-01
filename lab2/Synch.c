@@ -95,7 +95,6 @@ code Synch
       ----------  Mutex . Init  ----------
 
       method Init ()
-          status = 0
           heldBy = null
           waitingThreads = new List [Thread]
           -- FatalError ("Unimplemented method")
