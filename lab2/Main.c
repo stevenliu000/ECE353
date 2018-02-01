@@ -23,8 +23,8 @@ code Main
 
       -- SimpleThreadExample ()
       -- MoreThreadExamples ()
-      TestMutex ()
-      -- ProducerConsumer ()
+      -- TestMutex ()
+      ProducerConsumer ()
 
       ThreadFinish ()
 
@@ -346,6 +346,8 @@ code Main
         c: char = intToChar ('A' + myId - 1)
       for i = 1 to 5
         -- Perform synchroniztion...
+        emptyCount.Down()
+        mutex.Lock()
 
         -- Add c to the buffer
         buffer [bufferNextIn] = c
@@ -356,6 +358,8 @@ code Main
         PrintBuffer (c)
 
         -- Perform synchronization...
+        mutex.Unlock()
+        fillCount.Up()
 
       endFor
     endFunction
@@ -365,6 +369,8 @@ code Main
         c: char
       while true
         -- Perform synchroniztion...
+        fillCount.Down()
+        mutex.Lock()
 
         -- Remove next character from the buffer
         c = buffer [bufferNextOut]
@@ -375,6 +381,8 @@ code Main
         PrintBuffer (c)
 
         -- Perform synchronization...
+        mutex.Unlock()
+        emptyCount.Up()
 
       endWhile
     endFunction
