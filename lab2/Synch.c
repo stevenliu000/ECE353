@@ -124,7 +124,7 @@ code Synch
             oldIntStat: int
             Threadwaitedlongest: ptr to Thread
           oldIntStat = SetInterruptsTo (DISABLED)
-          if !IsHeldByCurrentThread ()
+          if !self.IsHeldByCurrentThread ()
             FatalError ("A thread that does not hold the lock try to unlock the mutex lock")
           endIf
           if !waitingThreads.IsEmpty()
