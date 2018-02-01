@@ -200,8 +200,7 @@ code Thread
     -- call "Yield" explicitly, or until they call "Sleep".)
     --
       currentInterruptStatus = DISABLED
-      printChar ('_')
-      printChar ('\n')
+      -- printChar ('_')
       currentThread.Yield ()
       currentInterruptStatus = ENABLED
     endFunction
@@ -281,7 +280,7 @@ code Thread
           var
             oldIntStat, junk: int
           oldIntStat = SetInterruptsTo (DISABLED)
-          print ("Forking thread...\n")
+          --print ("Forking thread...\n")
           initialFunction = fun
           initialArgument = arg
           stackTop = stackTop - 4

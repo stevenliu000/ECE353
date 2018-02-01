@@ -1,8 +1,8 @@
 code Synch
 
-  -- OS Class: Project 2
+  -- OS Class: Project 2 -- SOLUTION CODE
   --
-  -- <PUT YOUR NAME HERE>
+  -- Harry Porter  --  December 12, 2003
 
 -----------------------------  Semaphore  ---------------------------------
 
@@ -92,30 +92,83 @@ code Synch
     --         Return TRUE iff the current (invoking) thread holds a lock
     --         on the mutex.
 
-      ----------  Mutex . Init  ----------
+       -----------  Mutex . Init  -----------
 
       method Init ()
-          FatalError ("Unimplemented method")
+          heldBy = null
+          waitingThreads = new List [Thread]
         endMethod
 
-      ----------  Mutex . Lock  ----------
+       -----------  Mutex . Lock  -----------
 
       method Lock ()
-          FatalError ("Unimplemented method")
+          var
+            oldIntStat: int
+          oldIntStat = SetInterruptsTo (DISABLED)
+          if self.IsHeldByCurrentThread ()
+            FatalError ("The thread that holds the lock already try to lock the mutex lock")
+          endIf
+          if heldBy == null
+            heldBy = currentThread
+          else
+            waitingThreads.AddToEnd (currentThread)
+            currentThread.Sleep ()
+          endIf
+          oldIntStat = SetInterruptsTo (oldIntStat)
         endMethod
 
-      ----------  Mutex . Unlock  ----------
+       -----------  Mutex . Unlock  -----------
 
       method Unlock ()
-          FatalError ("Unimplemented method")
+          var
+            oldIntStat: int
+            Threadwaitedlongest: ptr to Thread
+          oldIntStat = SetInterruptsTo (DISABLED)
+          if !self.IsHeldByCurrentThread ()
+            FatalError ("A thread that does not hold the lock try to unlock the mutex lock")
+          endIf
+          if !waitingThreads.IsEmpty()
+            Threadwaitedlongest = waitingThreads.Remove ()
+            Threadwaitedlongest.status = READY
+            readyList.AddToEnd (Threadwaitedlongest)
+            heldBy = Threadwaitedlongest
+          else
+            heldBy = null
+          endIf
+          oldIntStat = SetInterruptsTo (oldIntStat)
         endMethod
 
-      ----------  Mutex . IsHeldByCurrentThread  ----------
+       -----------  Mutex . IsHeldByCurrentThread  -----------
 
       method IsHeldByCurrentThread () returns bool
-          FatalError ("Unimplemented method")
-          return false
+          return heldBy == currentThread
         endMethod
+
+  endBehavior
+
+-----------------------------  Mutex2  ---------------------------------
+
+  behavior Mutex2
+    -- This is a second implementation of Mutexs, using Semaphores.
+
+    method Init ()
+        sem = new Semaphore
+        sem.Init (1)
+      endMethod
+
+    method Lock ()
+        sem.Down ()
+        heldBy = currentThread
+      endMethod
+
+    method Unlock ()
+        heldBy = null
+        sem.Up ()
+      endMethod
+
+    method IsHeldByCurrentThread () returns bool
+        return heldBy == currentThread
+      endMethod
 
   endBehavior
 

@@ -21,10 +21,10 @@ code Main
 
       -----  Uncomment any one of the following to perform the desired test  -----
 
-      SimpleThreadExample ()
+      -- SimpleThreadExample ()
       -- MoreThreadExamples ()
       -- TestMutex ()
-      -- ProducerConsumer ()
+      ProducerConsumer ()
 
       ThreadFinish ()
 
@@ -309,7 +309,20 @@ code Main
     bufferNextOut: int = 0
     thArray: array [8] of Thread = new array of Thread { 8 of new Thread }
 
+    -- helpers
+    mutex: Mutex
+    prod: Semaphore
+    cons: Semaphore
+
   function ProducerConsumer ()
+
+      -- Initialize helpers
+      mutex = new Mutex
+      mutex.Init()
+      prod = new Semaphore
+      prod.Init(BUFFER_SIZE)
+      cons = new Semaphore
+      cons.Init(0)
 
       print ("     ")
 
@@ -346,6 +359,8 @@ code Main
         c: char = intToChar ('A' + myId - 1)
       for i = 1 to 5
         -- Perform synchroniztion...
+        prod.Down()
+        mutex.Lock()
 
         -- Add c to the buffer
         buffer [bufferNextIn] = c
@@ -356,6 +371,8 @@ code Main
         PrintBuffer (c)
 
         -- Perform synchronization...
+        mutex.Unlock()
+        cons.Up()
 
       endFor
     endFunction
@@ -365,6 +382,8 @@ code Main
         c: char
       while true
         -- Perform synchroniztion...
+        cons.Down()
+        mutex.Lock()
 
         -- Remove next character from the buffer
         c = buffer [bufferNextOut]
@@ -375,6 +394,8 @@ code Main
         PrintBuffer (c)
 
         -- Perform synchronization...
+        mutex.Unlock()
+        prod.Up()
 
       endWhile
     endFunction

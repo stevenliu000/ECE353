@@ -15,6 +15,23 @@ header Synch
 
   class Mutex
     superclass Object
+    fields
+      heldBy: ptr to Thread           -- Null means this mutex is unlocked.
+      waitingThreads: List [Thread]
+    methods
+      Init ()
+      Lock ()
+      Unlock ()
+      IsHeldByCurrentThread () returns bool
+  endClass
+
+  class Mutex2
+    -- A second, equivalent implementation using Semaphores, which
+    -- was not included in initial version of Sync.h.
+    superclass Object
+    fields
+      sem: Semaphore
+      heldBy: ptr to Thread           -- Null means this mutex is unlocked.
     methods
       Init ()
       Lock ()
