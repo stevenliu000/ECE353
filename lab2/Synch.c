@@ -145,6 +145,7 @@ code Synch
             return true
           else:
             return false
+          endIf
           FatalError ("Unimplemented method")
           return false
         endMethod
