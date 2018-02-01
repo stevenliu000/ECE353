@@ -96,6 +96,8 @@ code Synch
 
       method Init ()
           status = 0
+          heldBy = null
+          waitingThreads = new List [Thread]
           -- FatalError ("Unimplemented method")
         endMethod
 
@@ -103,23 +105,43 @@ code Synch
 
       method Lock ()
           var
-
-          oldIntStat = SetInterruptsTo (DISABLED)
-
-          
-          FatalError ("Unimplemented method")
-        endMethod
+             oldIntStat: int
+           if heldBy == currentThread
+             FatalError ("Attempt to lock a mutex by a thread already holding it")
+           endIf
+           oldIntStat = SetInterruptsTo (DISABLED)
+           if !heldBy
+             heldBy = currentThread
+           else
+             waitingThreads.AddToEnd (currentThread)
+             currentThread.Sleep ()
+           endIf
+           oldIntStat = SetInterruptsTo (oldIntStat)
+         endMethod
 
       ----------  Mutex . Unlock  ----------
 
       method Unlock ()
-          FatalError ("Unimplemented method")
+          var 
+            nextThread: ptr to Thread
+            oldIntStat: int
+          oldIntStat = SetInterruptsTo(DISABLED)
+          if heldBy != currentThread
+            FatalError ("Other thread call Unlock()")
+          endIf
+          heldBy = null
+          nextThread = waitingThreads.Remove()
+          if nextThread != null
+            nextThread.status = READY
+            readyList.AddToEnd(nextThread)
+          endIf
+          oldIntStat = SetInterruptsTo(oldIntStat)
         endMethod
 
       ----------  Mutex . IsHeldByCurrentThread  ----------
 
       method IsHeldByCurrentThread () returns bool
-          if heldBy == :
+          if heldBy == currentThread:
             return true
           else:
             return false
