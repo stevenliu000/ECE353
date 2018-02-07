@@ -122,11 +122,11 @@ code Main
       -- ...unimplemented...
 
       var
-        i: int
+        p: int
 
       status = new array [5] of int
-      for i = 0 to 4
-        array[i] = THINKING
+      for p = 0 to 4
+        array[p] = THINKING
       monitorLock = mew Mutex2
       monitorLock.Init()
       con = new Condition
@@ -148,7 +148,7 @@ code Main
       right = (p + 1) % 5
       while status[left] == EATING or status[right] == EATING
         monitorLock.Unlock()
-      
+
 
 
       endMethod
