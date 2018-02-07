@@ -106,6 +106,8 @@ code Main
     superclass Object
     fields
       status: array [5] of int -- For each philosopher: HUNGRY, EATING, or THINKING
+      monitorLock: Mutex2
+      con: Condition
     methods
       Init ()
       PickupForks (p: int)
@@ -118,16 +120,47 @@ code Main
     method Init ()
       -- Initialize so that all philosophers are THINKING.
       -- ...unimplemented...
+
+      var
+        i: int
+
+      status = new array [5] of int
+      for i = 0 to 4
+        array[i] = THINKING
+      monitorLock = mew Mutex2
+      monitorLock.Init()
+      con = new Condition
+      con.Init()
+
+
       endMethod
 
     method PickupForks (p: int)
       -- This method is called when philosopher 'p' wants to eat.
       -- ...unimplemented...
+
+      var 
+        left: int
+        right: int
+      monitorLock.Lock()
+      status[p] = HUNGRY
+      left = (p + 4) % 5
+      right = (p + 1) % 5
+      while status[left] == EATING or status[right] == EATING
+        monitorLock.Unlock()
+        con.
+
+
       endMethod
 
     method PutDownForks (p: int)
       -- This method is called when the philosopher 'p' is done eating.
       -- ...unimplemented...
+
+
+
+
+
       endMethod
 
     method PrintAllStatus ()
