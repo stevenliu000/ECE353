@@ -121,7 +121,7 @@ code Main
       -- Initialize so that all philosophers are THINKING.
       -- ...unimplemented...
 
-      status = new array 
+      status = new array of int {5 of 3}
       monitorLock = new Mutex2
       monitorLock.Init()
       con = new Condition
