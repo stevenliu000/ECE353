@@ -121,12 +121,7 @@ code Main
       -- Initialize so that all philosophers are THINKING.
       -- ...unimplemented...
 
-      var
-        p: int
-
-      status = new array [5] of int
-      for p = 0 to 4
-        array[p] = THINKING
+      status = new array 
       monitorLock = mew Mutex2
       monitorLock.Init()
       con = new Condition
@@ -146,9 +141,9 @@ code Main
       status[p] = HUNGRY
       left = (p + 4) % 5
       right = (p + 1) % 5
-      while status[left] == EATING or status[right] == EATING
+      while status[left] == EATING || status[right] == EATING
         monitorLock.Unlock()
-
+      endwhile
 
 
       endMethod
