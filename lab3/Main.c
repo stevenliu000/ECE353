@@ -148,7 +148,7 @@ code Main
       right = (p + 1) % 5
       while status[left] == EATING or status[right] == EATING
         monitorLock.Unlock()
-        con.
+      
 
 
       endMethod
