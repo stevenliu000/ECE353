@@ -2,7 +2,7 @@ code Main
 
   -- OS Class: Project 3
   --
-  -- <PUT YOUR NAME HERE>
+  -- Weixin Liu
   --
 
   -- This package contains the following:
@@ -10,9 +10,9 @@ code Main
 -----------------------------  Main  ---------------------------------
 
   function main ()
-      -- InitializeScheduler ()
-      -- DiningPhilosophers ()
-
+      InitializeScheduler ()
+      DiningPhilosophers ()
+      ThreadFinish()
       FatalError ("Need to implement")
     endFunction
 
@@ -106,8 +106,8 @@ code Main
     superclass Object
     fields
       status: array [5] of int -- For each philosopher: HUNGRY, EATING, or THINKING
-      monitorLock: Mutex2
-      con: Condition
+      monitorLock: Mutex
+      con: array [5] of Condition
     methods
       Init ()
       PickupForks (p: int)
@@ -121,11 +121,15 @@ code Main
       -- Initialize so that all philosophers are THINKING.
       -- ...unimplemented...
 
-      status = new array of int {5 of 3}
-      monitorLock = new Mutex2
+      var i: int
+
+      status = new array of int {5 of THINKING}
+      monitorLock = new Mutex
       monitorLock.Init()
-      con = new Condition
-      con.Init()
+      con = new array [5] of Condition {5 of new Condition}
+      for i = 0 to 4
+        con[i].Init()
+      endFor
 
 
       endMethod
@@ -139,23 +143,41 @@ code Main
         right: int
       monitorLock.Lock()
       status[p] = HUNGRY
+      self.PrintAllStatus()
       left = (p + 4) % 5
       right = (p + 1) % 5
-      while status[left] == EATING || status[right] == EATING
-        monitorLock.Unlock()
-      endWhile
-
-
+      if status[left] == EATING || status[right] == EATING
+        con[p].Wait(& monitorLock)
+      else
+        status[p] = EATING
+        self.PrintAllStatus()
+      endIf
+      monitorLock.Unlock()
       endMethod
 
     method PutDownForks (p: int)
       -- This method is called when the philosopher 'p' is done eating.
       -- ...unimplemented...
 
-
-
-
-
+      var 
+        left: int
+        right: int
+      monitorLock.Lock()
+      status[p] = THINKING
+      self.PrintAllStatus()
+      left = (p + 4) % 5
+      right = (p + 1) % 5
+      if status[left] == HUNGRY && status[(left+4)%5] != EATING
+        status[left] = EATING
+        self.PrintAllStatus()
+        con[left].Signal(& monitorLock)
+      endIf
+      if status[right] == HUNGRY && status[(right+1)%5] != EATING
+        status[right] = EATING
+        self.PrintAllStatus()
+        con[right].Signal(& monitorLock)
+      endIf 
+      monitorLock.Unlock()
       endMethod
 
     method PrintAllStatus ()
