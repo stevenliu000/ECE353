@@ -11,9 +11,17 @@ code Main
 
   function main ()
       InitializeScheduler ()
-      DiningPhilosophers ()
+
+      -- DiningPhilosophers ()
+      -- ThreadFinish()
+      
+      -- SleepingBarber()
+      -- ThreadFinish()
+
+      GamingParlor()
       ThreadFinish()
-      FatalError ("Need to implement")
+
+
     endFunction
 
 
@@ -24,7 +32,7 @@ code Main
   -- This code is an implementation of the Dining Philosophers problem.  Each
   -- philosopher is simulated with a thread.  Each philosopher thinks for a while
   -- and then wants to eat.  Before eating, he must pick up both his forks.
-  -- After eating, he puts down his forks.  Each fork is shared between
+  -- After eating, he puts Down his forks.  Each fork is shared between
   -- two philosophers and there are 5 philosophers and 5 forks arranged in a
   -- circle.
   --
@@ -33,7 +41,7 @@ code Main
   --     PickupForks (phil)
   --     PutDownForks (phil)
   -- The philsophers are numbered 0 to 4 and each of these methods is passed an 
-  -- integer indicating which philospher wants to pickup (or put down) the forks.
+  -- integer indicating which philospher wants to pickup (or put Down) the forks.
   -- The call to "PickUpForks" will wait until both of his forks are
   -- available.  The call to "PutDownForks" will never wait and may also
   -- wake up threads (i.e., philosophers) who are waiting.
@@ -45,7 +53,7 @@ code Main
   --           E    --  eating
   --           .    --  thinking
   --         blank  --  hungry (i.e., waiting for forks)
-  -- By reading down a column, you can see the history of a philosopher.
+  -- By reading Down a column, you can see the history of a philosopher.
   --
   -- The forks are not modeled explicitly.  A fork is only picked up
   -- by a philosopher if he can pick up both forks at the same time and begin
@@ -91,7 +99,7 @@ code Main
   function PhilosphizeAndEat (p: int)
     -- The parameter "p" identifies which philosopher this is.
     -- In a loop, he will think, acquire his forks, eat, and
-    -- put down his forks.
+    -- put Down his forks.
       var
         i: int
       for i = 1 to 7
@@ -209,6 +217,271 @@ code Main
         endFor
         nl ()
       endMethod
+
+  endBehavior
+
+
+-----------------------------  Sleeping Barber  ----------------------------
+  const
+    numChairs = 5
+    numCustomers = 9
+
+  var
+      barbers: Thread
+      customers: array [numCustomers] of Thread
+      waitingCustomers: Semaphore
+      barberSemephore: Semaphore
+      accessLock: Mutex
+      occupiedChairs: int
+      barberDone: Semaphore
+      customerDone: Semaphore
+
+  function SleepingBarber()
+    customers = new array [numCustomers] of Thread {numCustomers of new Thread}
+
+    waitingCustomers = new Semaphore
+    waitingCustomers.Init(0)
+    barberSemephore = new Semaphore
+    barberSemephore.Init(0)
+    barberDone = new Semaphore
+    barberDone.Init(0)
+    customerDone = new Semaphore
+    customerDone.Init(0)
+    accessLock = new Mutex
+    accessLock.Init()
+    occupiedChairs = 0
+
+
+    printHeader()
+
+    barbers = new Thread
+    barbers.Init("Barber")
+    barbers.Fork(barber,1)
+
+    customers[0].Init("1")
+    customers[0].Fork(customer, 2)
+    customers[1].Init("2")
+    customers[1].Fork(customer, 2)
+    customers[2].Init("3")
+    customers[2].Fork(customer, 2)
+    customers[3].Init("4")
+    customers[3].Fork(customer, 2)
+    customers[4].Init("5")
+    customers[4].Fork(customer, 2)
+    customers[5].Init("6")
+    customers[5].Fork(customer, 2)
+    customers[6].Init("7")
+    customers[6].Fork(customer, 2)    
+    customers[7].Init("8")
+    customers[7].Fork(customer, 2)
+    customers[8].Init("9")
+    customers[8].Fork(customer, 2)
+
+  endFunction
+
+  function barber(dumpy: int)
+    while true
+      waitingCustomers.Down()
+      accessLock.Lock()
+      occupiedChairs = occupiedChairs - 1
+      accessLock.Unlock()
+      printBarber(" start ")
+      barberSemephore.Up()
+      cutHair()
+      customerDone.Down()
+      printBarber(" end ")
+      barberDone.Up()
+    endWhile
+  endFunction
+
+  function customer(numCuts: int)
+    var 
+      threadNum: int
+      i: int
+    threadNum = charToInt(currentThread.name[0]) - charToInt('0')
+    for i = 1 to numCuts
+      accessLock.Lock()
+      printCustomers(threadNum, "E")
+      if occupiedChairs < numChairs
+        occupiedChairs = occupiedChairs + 1
+        printCustomers(threadNum, "S")
+        accessLock.Unlock()
+        waitingCustomers.Up()
+        barberSemephore.Down()
+        printCustomers(threadNum, "B")
+        getHaircut()
+        printCustomers(threadNum, "F")
+        customerDone.Up()
+        barberDone.Down()
+      else
+        accessLock.Unlock()
+      endIf
+      printCustomers(threadNum, "L")
+    endFor
+  endFunction
+
+  function cutHair()
+    currentThread.Yield()
+  endFunction
+
+  function getHaircut()
+    currentThread.Yield()
+  endFunction
+
+  function printHeader()
+    var
+      i:int
+    for i = 0 to numChairs
+      print(" ")
+    endFor
+    print(" BARBER ")
+    for i = 1 to numCustomers
+      printInt(i)
+      print(" ")
+    endFor
+    nl()
+  endFunction
+
+  function printBarber(state: String)
+    var 
+      i: int
+      oldStatus: int
+
+    oldStatus = SetInterruptsTo(DISABLED)
+    for i = 1 to numChairs
+      if i <= occupiedChairs
+        print("X")
+      else
+        print("-")
+      endIf
+    endFor
+    print(state)
+    nl()
+    oldStatus = SetInterruptsTo(oldStatus)
+  endFunction
+
+  function printCustomers(customerNumber: int, state: String)
+    var 
+      i: int
+      oldStatus: int
+
+    oldStatus = SetInterruptsTo(DISABLED)
+    for i = 1 to numChairs
+      if i <= occupiedChairs
+        print("X")
+      else
+        print("-")
+      endIf
+    endFor
+    print("       ")
+    for i = 1 to customerNumber
+      print("  ")
+    endFor
+    print(state)
+    nl()
+    oldStatus = SetInterruptsTo(oldStatus)
+  endFunction
+
+
+-----------------------------  Gaming Parlor  ----------------------------
+  const
+    Backgammon = 4
+    Risk = 5
+    Monopoly = 2
+    Pictionary = 1
+
+  var
+    gameParlor: GameParlor
+    Customers: array [8] of Thread
+
+  function GamingParlor()
+    gameParlor = new GameParlor
+    gameParlor.Init()
+    Customers = new array of Thread {8 of new Thread }
+
+    Customers[0].Init ("A")
+    Customers[0].Fork (playGame, Backgammon)
+    Customers[1].Init ("B")
+    Customers[1].Fork (playGame, Backgammon)
+    Customers[2].Init ("C")
+    Customers[2].Fork (playGame, Risk)
+    Customers[3].Init ("D")
+    Customers[3].Fork (playGame, Risk)
+    Customers[4].Init ("E")
+    Customers[4].Fork (playGame, Monopoly)
+    Customers[5].Init ("F")
+    Customers[5].Fork (playGame, Monopoly)
+    Customers[6].Init ("G")
+    Customers[6].Fork (playGame, Pictionary)
+    Customers[7].Init ("H")
+    Customers[7].Fork (playGame, Pictionary)
+   endFunction
+
+  function playGame (game: int)
+    var i: int
+    for i = 1 to 5
+      gameParlor.Request(game)
+      currentThread.Yield()
+      gameParlor.Return(game)
+    endFor
+  endFunction
+
+  class GameParlor
+    superclass Object
+    fields
+      numberDiceAvail: int
+      mutex: Mutex
+      con: Condition
+    methods
+      Init ()
+      Request(dice: int)
+      Return(dice: int)
+      Print(str: String, count: int)
+  endClass
+
+  behavior GameParlor
+
+    method Init ()
+      numberDiceAvail = 8
+      con = new Condition
+      con.Init ()
+      mutex = new Mutex
+      mutex.Init ()
+    endMethod
+
+    method Request (dice: int)
+      mutex.Lock()
+      self.Print("requests", dice)
+      while dice > numberDiceAvail 
+        con.Wait(&mutex)
+      endWhile
+      numberDiceAvail = numberDiceAvail - dice
+      self.Print("proceeds with", dice)
+      mutex.Unlock()
+    endMethod
+
+    method Return (dice: int)
+      mutex.Lock()
+      numberDiceAvail = numberDiceAvail + dice
+      self.Print("releases and adds back", dice)
+      con.Broadcast(&mutex)
+      mutex.Unlock()
+    endMethod    
+
+    method Print (str: String, count: int)
+      -- This method prints the current thread's name and the arguments.
+      -- It also prints the current number of dice available.
+
+      print (currentThread.name)
+      print (" ")
+      print (str)
+      print (" ")
+      printInt (count)
+      nl ()
+      print ("------------------------------Number of dice now avail = ")
+      printInt (numberDiceAvail)
+      nl ()
+    endMethod
 
   endBehavior
 
