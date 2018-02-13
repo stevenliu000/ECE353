@@ -15,7 +15,7 @@ code Main
       -- DiningPhilosophers ()
       -- ThreadFinish()
       
-      SleepingBarber()
+      --SleepingBarber()
       ThreadFinish()
 
       -- GamingParlor()

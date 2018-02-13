@@ -5593,16 +5593,16 @@ main:
 	call	_P_Thread_InitializeScheduler
 ! CALL STATEMENT...
 !   Call the function
-	mov	21,r13		! source line 21
+	mov	18,r13		! source line 18
 	mov	"\0\0CA",r10
-	call	_function_55_GamingParlor
+	call	_function_63_SleepingBarber
 ! CALL STATEMENT...
 !   Call the function
-	mov	22,r13		! source line 22
+	mov	19,r13		! source line 19
 	mov	"\0\0CA",r10
 	call	_P_Thread_ThreadFinish
 ! RETURN STATEMENT...
-	mov	22,r13		! source line 22
+	mov	19,r13		! source line 19
 	mov	"\0\0RE",r10
 	add	r15,4,r15
 	pop	r13
@@ -10956,8 +10956,8 @@ _Label_882:
 	mov	1,r1
 	store	r1,[r14+-24]
 !   Calculate and save the FOR-LOOP ending value
-!   _temp_584 = 1		(4 bytes)
-	mov	1,r1
+!   _temp_584 = 5		(4 bytes)
+	mov	5,r1
 	store	r1,[r14+-20]
 !   Initialize FOR-LOOP index variable
 !   Data Move: i = _temp_583  (sizeInBytes=4)
