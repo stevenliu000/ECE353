@@ -193,6 +193,8 @@ header Kernel
     fields
       threadTable: array [MAX_NUMBER_OF_PROCESSES] of Thread
       freeList: List [Thread]
+      threadManagerLock: Mutex
+      aThreadBecameFree: Condition
     methods
       Init ()
       Print ()
@@ -261,6 +263,7 @@ header Kernel
       Init ()
       Print ()
       GetAFrame () returns int                         -- returns addr of frame
+      GetAFrameModified () returns int
       GetNewFrames (aPageTable: ptr to AddrSpace, numFramesNeeded: int)
       ReturnAllFrames (aPageTable: ptr to AddrSpace)
   endClass
