@@ -381,9 +381,9 @@ _Label_33:
 	.import	_CheckVersion_P_List_
 	cmp	r1,0
 	bne	_Label_34
-! Make sure _P_Kernel_ has hash value 0x77f70c1a (decimal 2012679194)
+! Make sure _P_Kernel_ has hash value 0x89d6f9cb (decimal -1982400053)
 	set	_packageName,r2
-	set	0x77f70c1a,r3
+	set	0x89d6f9cb,r3
 	call	_CheckVersion_P_Kernel_
 	.import	_CheckVersion_P_Kernel_
 	cmp	r1,0
@@ -3284,7 +3284,7 @@ _Label_319:
 	cmp	r2,0
 	be	 _runtimeErrorUninitializedObject
 	store	r1,[r15]
-	add	r2,20,r2
+	add	r2,16,r2
 	call	r2
 ! CALL STATEMENT...
 !   if intIsZero (pcb) then goto _runtimeErrorNullPointer
@@ -3426,7 +3426,7 @@ _Label_332:
 	cmp	r2,0
 	be	 _runtimeErrorUninitializedObject
 	store	r1,[r15]
-	add	r2,24,r2
+	add	r2,20,r2
 	call	r2
 ! FOR STATEMENT...
 	mov	404,r13		! source line 404

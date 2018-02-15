@@ -1061,21 +1061,25 @@ code Kernel
           return frameAddr
         endMethod
 
+      method GetAFrameModified () returns int
+          var f, frameAddr: int
+          f = framesInUse.FindZeroAndSet ()
+          frameAddr = PHYSICAL_ADDRESS_OF_FIRST_PAGE_FRAME + (f * PAGE_SIZE)
+          return frameAddr
+      endMethod
       ----------  FrameManager . GetNewFrames  ----------
 
       method GetNewFrames (aPageTable: ptr to AddrSpace, numFramesNeeded: int)
           var 
             i: int
             frameAddr: int
-	    f: int
 
           frameManagerLock.Lock()
           while numberFreeFrames < numFramesNeeded
             newFramesAvailable.Wait(&frameManagerLock)
           endWhile
           for i = 0 to numFramesNeeded-1
-            f = framesInUse.FindZeroAndSet ()
-            frameAddr = PHYSICAL_ADDRESS_OF_FIRST_PAGE_FRAME + (f * PAGE_SIZE)
+            frameAddr = self.GetAFrameModified()
             (*aPageTable).SetFrameAddr(i, frameAddr)
           endFor
           numberFreeFrames = numberFreeFrames - numFramesNeeded
