@@ -2758,7 +2758,6 @@ code Kernel
         newThread: ptr to Thread
 
       print("Loading initial program...")
-      nl()
       newThread = threadManager.GetANewThread()
       (*newThread).Init("UserProgram")
       (*newThread).Fork(StartUserProcess, 0)

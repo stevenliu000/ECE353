@@ -92,6 +92,7 @@
 	.import	_P_Kernel_SetInterruptsTo
 	.import	_P_Kernel_ProcessFinish
 	.import	_P_Kernel_InitFirstProcess
+	.import	_P_Kernel_StartUserProcess
 	.import	Switch
 	.import	ThreadStartUp
 	.import	GetOldUserPCFromSystemStack
@@ -251,9 +252,9 @@ _Label_5:
 	.import	_CheckVersion_P_List_
 	cmp	r1,0
 	bne	_Label_6
-! Make sure _P_Kernel_ has hash value 0x82832c48 (decimal -2105332664)
+! Make sure _P_Kernel_ has hash value 0xce77bebf (decimal -831013185)
 	set	_packageName,r2
-	set	0x82832c48,r3
+	set	0xce77bebf,r3
 	call	_CheckVersion_P_Kernel_
 	.import	_CheckVersion_P_Kernel_
 	cmp	r1,0
