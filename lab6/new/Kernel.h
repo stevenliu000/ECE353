@@ -103,8 +103,7 @@ header Kernel
     FatalError_ThreadVersion (errorMessage: ptr to array of char)
     SetInterruptsTo (newStatus: int) returns int
     ProcessFinish (exitStatus: int)
-    InitFirstProcess ()
-    StartUserProcess (arg: int)
+    InitFirstProcess()
 
     -- Routines from Switch.s:
 
@@ -195,8 +194,8 @@ header Kernel
     fields
       threadTable: array [MAX_NUMBER_OF_PROCESSES] of Thread
       freeList: List [Thread]
+      aThreadIsAvailable: Condition
       threadManagerLock: Mutex
-      aThreadBecameFree: Condition
     methods
       Init ()
       Print ()
@@ -265,6 +264,7 @@ header Kernel
       Init ()
       Print ()
       GetAFrame () returns int                         -- returns addr of frame
+      GetAFrame2 () returns int
       GetNewFrames (aPageTable: ptr to AddrSpace, numFramesNeeded: int)
       ReturnAllFrames (aPageTable: ptr to AddrSpace)
   endClass
@@ -301,7 +301,6 @@ header Kernel
       CopyBytesToVirtual (virtAddr, kernelAddr, numBytes: int) returns int
       GetStringFromVirtual (kernelAddr: String, virtAddr, maxSize: int) returns int
   endClass
-
 
   -----------------------------  DiskDriver  ---------------------------------
   --
@@ -385,6 +384,5 @@ header Kernel
       ReadInt () returns int
       LoadExecutable (addrSpace: ptr to AddrSpace) returns int  -- -1 = problems
   endClass
-
 
 endHeader

@@ -1138,26 +1138,38 @@ code Kernel
           return frameAddr
         endMethod
 
+      method GetAFrame2 () returns int
+        -- Allocate a single frame and return its physical address.  If no frames
+        -- are currently available, wait until the request can be completed.
+        --
+          var f, frameAddr: int
+
+          -- Find a free frame and allocate it...
+          f = framesInUse.FindZeroAndSet ()
+
+          -- Compute and return the physical address of the frame...
+          frameAddr = PHYSICAL_ADDRESS_OF_FIRST_PAGE_FRAME + (f * PAGE_SIZE)
+          -- printHexVar ("GetAFrame returning frameAddr", frameAddr)
+          return frameAddr
+        endMethod
+
       ----------  FrameManager . GetNewFrames  ----------
 
       method GetNewFrames (aPageTable: ptr to AddrSpace, numFramesNeeded: int)
-          var 
-            i: int
-            frameAddr: int
-	    f: int
-
-          frameManagerLock.Lock()
-          while numberFreeFrames < numFramesNeeded
-            newFramesAvailable.Wait(&frameManagerLock)
-          endWhile
-          for i = 0 to numFramesNeeded-1
-            f = framesInUse.FindZeroAndSet ()
-            frameAddr = PHYSICAL_ADDRESS_OF_FIRST_PAGE_FRAME + (f * PAGE_SIZE)
-            (*aPageTable).SetFrameAddr(i, frameAddr)
-          endFor
-          numberFreeFrames = numberFreeFrames - numFramesNeeded
-          (*aPageTable).numberOfPages = numFramesNeeded
-          frameManagerLock.Unlock()
+        var 
+          i:int
+          frameAddr: int
+        frameManagerLock.Lock()
+        while numberFreeFrames < numFramesNeeded
+          newFramesAvailable.Wait (&frameManagerLock)
+        endWhile
+        for i = 0 to numFramesNeeded - 1
+          frameAddr = self.GetAFrame2()
+          (*aPageTable).SetFrameAddr(i, frameAddr)
+        endFor
+        numberFreeFrames = numberFreeFrames - numFramesNeeded
+        (*aPageTable).numberOfPages = numFramesNeeded
+        frameManagerLock.Unlock()
         endMethod
 
       ----------  FrameManager . ReturnAllFrames  ----------

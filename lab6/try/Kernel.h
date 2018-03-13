@@ -2,7 +2,7 @@ header Kernel
 
   uses System, List, BitMap
 
-  const
+    const
 
     SYSTEM_STACK_SIZE = 1000       -- in words
     STACK_SENTINEL = 0x24242424    -- in ASCII, this is "$$$$"
@@ -265,6 +265,7 @@ header Kernel
       Init ()
       Print ()
       GetAFrame () returns int                         -- returns addr of frame
+      GetAFrame2 () returns int
       GetNewFrames (aPageTable: ptr to AddrSpace, numFramesNeeded: int)
       ReturnAllFrames (aPageTable: ptr to AddrSpace)
   endClass
