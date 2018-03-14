@@ -31,7 +31,7 @@ code TestProgram3
       --JoinTest1 ()
       --JoinTest2 ()
       --JoinTest3 ()
-      --JoinTest4 () --doublecheck
+      JoinTest4 () --doublecheck
       --ManyProcessesTest1 ()
       --ManyProcessesTest2 ()
       --ManyProcessesTest3 ()

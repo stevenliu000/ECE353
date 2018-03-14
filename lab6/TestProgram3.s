@@ -915,9 +915,9 @@ _Label_904:
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
 !   Call the function
-	mov	38,r13		! source line 38
+	mov	34,r13		! source line 34
 	mov	"\0\0CA",r10
-	call	_function_185_ErrorTest
+	call	_function_190_JoinTest4
 ! CALL STATEMENT...
 !   Prepare Argument: offset=8  value=0  sizeInBytes=4
 	mov	0,r1
