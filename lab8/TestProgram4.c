@@ -41,7 +41,7 @@ code TestProgram4
       -- OpenTest3 ()
       -- ExecTest1 ()
       -- ExecTest2 ()
-       ExecTest3 ()
+      -- ExecTest3 ()
 
       Sys_Exit (0)
     endFunction
