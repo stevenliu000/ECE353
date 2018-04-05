@@ -92,7 +92,6 @@
 	.import	_P_Kernel_SetInterruptsTo
 	.import	_P_Kernel_ProcessFinish
 	.import	_P_Kernel_InitFirstProcess
-	.import	_P_Kernel_StartUserProcess
 	.import	Switch
 	.import	ThreadStartUp
 	.import	GetOldUserPCFromSystemStack
@@ -111,6 +110,8 @@
 	.import	_P_List_List
 ! The following class and its methods are from other packages
 	.import	_P_List_Listable
+! The following class and its methods are from other packages
+	.import	_P_Kernel_SerialDriver
 ! The following class and its methods are from other packages
 	.import	_P_Kernel_Semaphore
 ! The following class and its methods are from other packages
@@ -137,8 +138,6 @@
 	.import	_P_Kernel_FileControlBlock
 ! The following class and its methods are from other packages
 	.import	_P_Kernel_OpenFile
-! The following class and its methods are from other packages
-	.import	_P_Kernel_SerialDriver
 ! The following interfaces are from other packages
 ! The following interfaces are from this package
 ! Globals imported from other packages
@@ -154,8 +153,8 @@
 	.import	_P_Kernel_frameManager
 	.import	_P_Kernel_diskDriver
 	.import	_P_Kernel_serialDriver
-	.import	_P_Kernel_fileManager
 	.import	_P_Kernel_serialHasBeenInitialized
+	.import	_P_Kernel_fileManager
 ! Global variables in this package
 	.data
 	.align
@@ -256,9 +255,9 @@ _Label_5:
 	.import	_CheckVersion_P_List_
 	cmp	r1,0
 	bne	_Label_6
-! Make sure _P_Kernel_ has hash value 0x9daa48cd (decimal -1649784627)
+! Make sure _P_Kernel_ has hash value 0xdd430e89 (decimal -582807927)
 	set	_packageName,r2
-	set	0x9daa48cd,r3
+	set	0xdd430e89,r3
 	call	_CheckVersion_P_Kernel_
 	.import	_CheckVersion_P_Kernel_
 	cmp	r1,0
@@ -915,7 +914,7 @@ _Label_51:
 	cmp	r2,0
 	be	 _runtimeErrorUninitializedObject
 	store	r1,[r15]
-	add	r2,16,r2
+	add	r2,20,r2
 	call	r2
 !   Increment the FOR-LOOP index variable and jump back
 _Label_52:
@@ -999,7 +998,7 @@ _Label_63:
 	cmp	r2,0
 	be	 _runtimeErrorUninitializedObject
 	store	r1,[r15]
-	add	r2,20,r2
+	add	r2,24,r2
 	call	r2
 !   Increment the FOR-LOOP index variable and jump back
 _Label_64:

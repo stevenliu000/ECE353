@@ -10134,9 +10134,9 @@ main:
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
 !   Call the function
-	mov	21,r13		! source line 21
+	mov	22,r13		! source line 22
 	mov	"\0\0CA",r10
-	call	_function_251_BasicSerialTest
+	call	_function_250_KeyTest
 ! CALL STATEMENT...
 !   Call the function
 	mov	30,r13		! source line 30

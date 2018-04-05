@@ -61,8 +61,8 @@ header Kernel
     frameManager: FrameManager
     diskDriver: DiskDriver
     serialDriver: SerialDriver
+		serialHasBeenInitialized: bool
     fileManager: FileManager
-    serialHasBeenInitialized: bool
 
   functions
 
@@ -104,8 +104,7 @@ header Kernel
     FatalError_ThreadVersion (errorMessage: ptr to array of char)
     SetInterruptsTo (newStatus: int) returns int
     ProcessFinish (exitStatus: int)
-    InitFirstProcess ()
-    StartUserProcess (arg: int)
+		InitFirstProcess()
 
     -- Routines from Switch.s:
 
@@ -121,6 +120,39 @@ header Kernel
     -- address given by "initPC".
     external BecomeUserThread (initStack, initPC, initSystemStack: int)
 
+------------------------ SerialDriver ----------------------------
+--
+-- There is only one instance of this class.
+--
+	const
+	 SERIAL_CHARACTER_AVAILABLE_BIT = 0x00000001
+	 SERIAL_OUTPUT_READY_BIT = 0x00000002
+	 SERIAL_STATUS_WORD_ADDRESS = 0x00FFFF00
+	 SERIAL_DATA_WORD_ADDRESS = 0x00FFFF04
+	class SerialDriver
+	 superclass Object
+	 fields
+	 serial_status_word_address: ptr to int
+	 serial_data_word_address: ptr to int
+	 serialLock: Mutex
+	 getBuffer: array [SERIAL_GET_BUFFER_SIZE] of char
+	 getBufferSize: int
+	 getBufferNextIn: int
+	 getBufferNextOut: int
+	 getCharacterAvail: Condition
+	 putBuffer: array [SERIAL_PUT_BUFFER_SIZE] of char
+	 putBufferSize: int
+	 putBufferNextIn: int
+	 putBufferNextOut: int
+	 putBufferSem: Semaphore
+	 serialNeedsAttention: Semaphore
+	 serialHandlerThread: Thread
+	 methods
+	 Init ()
+	 PutChar (value: char)
+	 GetChar () returns char
+	 SerialHandler ()
+	endClass
 
   ---------------  Semaphore  ---------------
 
@@ -196,8 +228,8 @@ header Kernel
     fields
       threadTable: array [MAX_NUMBER_OF_PROCESSES] of Thread
       freeList: List [Thread]
-      threadManagerLock: Mutex
-      aThreadBecameFree: Condition
+			aThreadIsAvailable: Condition
+			threadManagerLock: Mutex
     methods
       Init ()
       Print ()
@@ -266,6 +298,7 @@ header Kernel
       Init ()
       Print ()
       GetAFrame () returns int                         -- returns addr of frame
+      GetAFrame2 () returns int
       GetNewFrames (aPageTable: ptr to AddrSpace, numFramesNeeded: int)
       ReturnAllFrames (aPageTable: ptr to AddrSpace)
   endClass
@@ -302,7 +335,6 @@ header Kernel
       CopyBytesToVirtual (virtAddr, kernelAddr, numBytes: int) returns int
       GetStringFromVirtual (kernelAddr: String, virtAddr, maxSize: int) returns int
   endClass
-
 
   -----------------------------  DiskDriver  ---------------------------------
   --
@@ -386,43 +418,5 @@ header Kernel
       ReadInt () returns int
       LoadExecutable (addrSpace: ptr to AddrSpace) returns int  -- -1 = problems
   endClass
-
-
-  ------------------------ SerialDriver ----------------------------
-  --
-  -- There is only one instance of this class.
-  --
-    const
-     SERIAL_CHARACTER_AVAILABLE_BIT = 0x00000001
-     SERIAL_OUTPUT_READY_BIT = 0x00000002
-     SERIAL_STATUS_WORD_ADDRESS = 0x00FFFF00
-     SERIAL_DATA_WORD_ADDRESS = 0x00FFFF04
-
-
-    class SerialDriver
-     superclass Object
-     fields
-       serial_status_word_address: ptr to int
-       serial_data_word_address: ptr to int
-       serialLock: Mutex
-       getBuffer: array [SERIAL_GET_BUFFER_SIZE] of char
-       getBufferSize: int
-       getBufferNextIn: int
-       getBufferNextOut: int
-       getCharacterAvail: Condition
-       putBuffer: array [SERIAL_PUT_BUFFER_SIZE] of char
-       putBufferSize: int
-       putBufferNextIn: int
-       putBufferNextOut: int
-       putBufferSem: Semaphore
-       serialNeedsAttention: Semaphore
-       serialHandlerThread: Thread
-     methods
-       Init ()
-       PutChar (value: char)
-       GetChar () returns char
-       SerialHandler ()
-
-    endClass
 
 endHeader

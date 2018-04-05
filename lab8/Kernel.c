@@ -2033,6 +2033,9 @@ code Kernel
           if ch == '\r'
             ch = '\n'
           endIf
+          if ch == 0x04
+            break
+          endIf
           *(destAddr asPtrTo char) = ch
           copiedSoFar = copiedSoFar + 1
           if *(destAddr asPtrTo char) == '\n'
@@ -3217,7 +3220,7 @@ code Kernel
         var
           newThread: ptr to Thread
 
-        print("Initializing Serial Driver...")
+        print("Initializing Serial Driver...\n")
         serial_status_word_address = SERIAL_STATUS_WORD_ADDRESS asPtrTo int
         serial_data_word_address = SERIAL_DATA_WORD_ADDRESS asPtrTo int
         serialLock = new Mutex
@@ -3278,7 +3281,7 @@ code Kernel
 
       endMethod
 
-      ----------  SerialDriver . GetChar  ----------  
+      ----------  SerialDriver . SerialHandler  ----------  
 
       method SerialHandler()
         var

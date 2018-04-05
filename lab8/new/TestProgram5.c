@@ -18,8 +18,8 @@ var bigBuffer: array [9000] of char = new array of char { 9000 of '?' }
     -- compile and run this program, and hand in the output it produces.
     --
 
-      BasicSerialTest ()
-      -- KeyTest ()
+      -- BasicSerialTest ()
+       KeyTest ()
       -- EchoTest ()
       -- LineEchoTest ()
       -- EOFTest ()
