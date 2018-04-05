@@ -20,12 +20,15 @@ var bigBuffer: array [9000] of char = new array of char { 9000 of '?' }
 
       -- BasicSerialTest ()
       -- KeyTest ()
-       EchoTest ()
-      -- LineEchoTest ()
+        --raw: things after ^D are not printed
+        --cooked: whats ^[[Descape
+      -- EchoTest ()
+        --whats ^[[7m
+      -- LineEchoTest () -raw 17 vs. 12
       -- EOFTest ()
       -- OpenCloseTerminalTest ()
-      -- TerminalErrorTest ()
-      -- Menu ()
+      -- TerminalErrorTest () --GREETINGS error order
+       Menu ()
 
       Sys_Shutdown ()
     endFunction

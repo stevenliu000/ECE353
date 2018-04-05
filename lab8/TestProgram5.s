@@ -10134,16 +10134,16 @@ main:
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
 !   Call the function
-	mov	23,r13		! source line 23
+	mov	31,r13		! source line 31
 	mov	"\0\0CA",r10
-	call	_function_249_EchoTest
+	call	_function_242_Menu
 ! CALL STATEMENT...
 !   Call the function
-	mov	30,r13		! source line 30
+	mov	33,r13		! source line 33
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Shutdown
 ! RETURN STATEMENT...
-	mov	30,r13		! source line 30
+	mov	33,r13		! source line 33
 	mov	"\0\0RE",r10
 	add	r15,4,r15
 	pop	r13
@@ -10175,7 +10175,7 @@ _Label_1273:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1273
-	mov	35,r13		! source line 35
+	mov	38,r13		! source line 38
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! UserBuffer
@@ -10239,7 +10239,7 @@ _Label_259:
 	load	[r14+-480],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	45,r13		! source line 45
+	mov	48,r13		! source line 48
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10250,11 +10250,11 @@ _Label_259:
 	load	[r14+-476],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	46,r13		! source line 46
+	mov	49,r13		! source line 49
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	48,r13		! source line 48
+	mov	51,r13		! source line 51
 	mov	"\0\0AS",r10
 !   _temp_263 = _StringConst_3
 	set	_StringConst_3,r1
@@ -10263,14 +10263,14 @@ _Label_259:
 	load	[r14+-472],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	48,r13		! source line 48
+	mov	51,r13		! source line 51
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-512]
 ! IF STATEMENT...
-	mov	49,r13		! source line 49
+	mov	52,r13		! source line 52
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_265		(int)
 	load	[r14+-512],r1
@@ -10281,7 +10281,7 @@ _Label_259:
 !	jmp	_Label_264
 _Label_264:
 ! THEN...
-	mov	50,r13		! source line 50
+	mov	53,r13		! source line 53
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_266 = _StringConst_4
@@ -10294,7 +10294,7 @@ _Label_264:
 	load	[r14+-512],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	50,r13		! source line 50
+	mov	53,r13		! source line 53
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
@@ -10307,17 +10307,17 @@ _Label_265:
 	load	[r14+-464],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	54,r13		! source line 54
+	mov	57,r13		! source line 57
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	55,r13		! source line 55
+	mov	58,r13		! source line 58
 	mov	"\0\0AS",r10
 !   ch = 120		(1 byte)
 	mov	120,r1
 	storeb	r1,[r14+-11]
 ! ASSIGNMENT STATEMENT...
-	mov	56,r13		! source line 56
+	mov	59,r13		! source line 59
 	mov	"\0\0AS",r10
 !   _temp_268 = &ch
 	add	r14,-11,r1
@@ -10332,14 +10332,14 @@ _Label_265:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	56,r13		! source line 56
+	mov	59,r13		! source line 59
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	58,r13		! source line 58
+	mov	61,r13		! source line 61
 	mov	"\0\0IF",r10
 !   if i != 1 then goto _Label_270		(int)
 	load	[r14+-516],r1
@@ -10349,7 +10349,7 @@ _Label_265:
 !	jmp	_Label_269
 _Label_269:
 ! THEN...
-	mov	59,r13		! source line 59
+	mov	62,r13		! source line 62
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_271 = _StringConst_6
@@ -10359,13 +10359,13 @@ _Label_269:
 	load	[r14+-456],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	59,r13		! source line 59
+	mov	62,r13		! source line 62
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_272
 _Label_270:
 ! ELSE...
-	mov	61,r13		! source line 61
+	mov	64,r13		! source line 64
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_273 = _StringConst_7
@@ -10378,13 +10378,13 @@ _Label_270:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	61,r13		! source line 61
+	mov	64,r13		! source line 64
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_272:
 ! IF STATEMENT...
-	mov	64,r13		! source line 64
+	mov	67,r13		! source line 67
 	mov	"\0\0IF",r10
 !   _temp_276 = ch XOR 97		(bool)
 	loadb	[r14+-11],r1
@@ -10398,7 +10398,7 @@ _Label_272:
 	jmp	_Label_275
 _Label_274:
 ! THEN...
-	mov	65,r13		! source line 65
+	mov	68,r13		! source line 68
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_277 = _StringConst_8
@@ -10408,16 +10408,16 @@ _Label_274:
 	load	[r14+-448],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	65,r13		! source line 65
+	mov	68,r13		! source line 68
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_278
 _Label_275:
 ! ELSE...
-	mov	66,r13		! source line 66
+	mov	69,r13		! source line 69
 	mov	"\0\0EL",r10
 ! IF STATEMENT...
-	mov	66,r13		! source line 66
+	mov	69,r13		! source line 69
 	mov	"\0\0IF",r10
 !   _temp_281 = ch XOR 120		(bool)
 	loadb	[r14+-11],r1
@@ -10431,7 +10431,7 @@ _Label_275:
 	jmp	_Label_280
 _Label_279:
 ! THEN...
-	mov	67,r13		! source line 67
+	mov	70,r13		! source line 70
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_282 = _StringConst_9
@@ -10441,13 +10441,13 @@ _Label_279:
 	load	[r14+-444],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	67,r13		! source line 67
+	mov	70,r13		! source line 70
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_283
 _Label_280:
 ! ELSE...
-	mov	69,r13		! source line 69
+	mov	72,r13		! source line 72
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_284 = _StringConst_10
@@ -10460,7 +10460,7 @@ _Label_280:
 	loadb	[r14+-11],r1
 	storeb	r1,[r15+4]
 !   Call the function
-	mov	69,r13		! source line 69
+	mov	72,r13		! source line 72
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printCharVar
 ! END IF...
@@ -10475,7 +10475,7 @@ _Label_278:
 	load	[r14+-436],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	73,r13		! source line 73
+	mov	76,r13		! source line 76
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10492,11 +10492,11 @@ _Label_278:
 	load	[r14+-428],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	74,r13		! source line 74
+	mov	77,r13		! source line 77
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCopy
 ! ASSIGNMENT STATEMENT...
-	mov	75,r13		! source line 75
+	mov	78,r13		! source line 78
 	mov	"\0\0AS",r10
 !   _temp_289 = &UserBuffer
 	add	r14,-532,r1
@@ -10533,14 +10533,14 @@ _Label_278:
 	mov	3,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	75,r13		! source line 75
+	mov	78,r13		! source line 78
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	77,r13		! source line 77
+	mov	80,r13		! source line 80
 	mov	"\0\0IF",r10
 !   if i != 3 then goto _Label_292		(int)
 	load	[r14+-516],r1
@@ -10550,7 +10550,7 @@ _Label_278:
 !	jmp	_Label_291
 _Label_291:
 ! THEN...
-	mov	78,r13		! source line 78
+	mov	81,r13		! source line 81
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_293 = _StringConst_13
@@ -10560,13 +10560,13 @@ _Label_291:
 	load	[r14+-412],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	78,r13		! source line 78
+	mov	81,r13		! source line 81
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_294
 _Label_292:
 ! ELSE...
-	mov	80,r13		! source line 80
+	mov	83,r13		! source line 83
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_295 = _StringConst_14
@@ -10579,13 +10579,13 @@ _Label_292:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	80,r13		! source line 80
+	mov	83,r13		! source line 83
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_294:
 ! IF STATEMENT...
-	mov	83,r13		! source line 83
+	mov	86,r13		! source line 86
 	mov	"\0\0IF",r10
 !   _temp_299 = &UserBuffer
 	add	r14,-532,r1
@@ -10600,7 +10600,7 @@ _Label_294:
 	load	[r14+-396],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	83,r13		! source line 83
+	mov	86,r13		! source line 86
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCmp
 !   Retrieve Result: targetName=_temp_298  sizeInBytes=4
@@ -10613,7 +10613,7 @@ _Label_294:
 	jmp	_Label_297
 _Label_296:
 ! THEN...
-	mov	84,r13		! source line 84
+	mov	87,r13		! source line 87
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_301 = _StringConst_16
@@ -10623,13 +10623,13 @@ _Label_296:
 	load	[r14+-392],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	84,r13		! source line 84
+	mov	87,r13		! source line 87
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_302
 _Label_297:
 ! ELSE...
-	mov	86,r13		! source line 86
+	mov	89,r13		! source line 89
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_303 = _StringConst_17
@@ -10639,7 +10639,7 @@ _Label_297:
 	load	[r14+-388],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	86,r13		! source line 86
+	mov	89,r13		! source line 89
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10650,7 +10650,7 @@ _Label_297:
 	load	[r14+-384],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	87,r13		! source line 87
+	mov	90,r13		! source line 90
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10661,7 +10661,7 @@ _Label_297:
 	load	[r14+-380],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	88,r13		! source line 88
+	mov	91,r13		! source line 91
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10672,7 +10672,7 @@ _Label_297:
 	load	[r14+-376],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	89,r13		! source line 89
+	mov	92,r13		! source line 92
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -10685,7 +10685,7 @@ _Label_302:
 	load	[r14+-372],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	93,r13		! source line 93
+	mov	96,r13		! source line 96
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10702,11 +10702,11 @@ _Label_302:
 	load	[r14+-364],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	94,r13		! source line 94
+	mov	97,r13		! source line 97
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCopy
 ! ASSIGNMENT STATEMENT...
-	mov	95,r13		! source line 95
+	mov	98,r13		! source line 98
 	mov	"\0\0AS",r10
 !   _temp_311 = &UserBuffer
 	add	r14,-532,r1
@@ -10743,14 +10743,14 @@ _Label_302:
 	mov	3,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	95,r13		! source line 95
+	mov	98,r13		! source line 98
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	97,r13		! source line 97
+	mov	100,r13		! source line 100
 	mov	"\0\0IF",r10
 !   if i != 3 then goto _Label_314		(int)
 	load	[r14+-516],r1
@@ -10760,7 +10760,7 @@ _Label_302:
 !	jmp	_Label_313
 _Label_313:
 ! THEN...
-	mov	98,r13		! source line 98
+	mov	101,r13		! source line 101
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_315 = _StringConst_22
@@ -10770,13 +10770,13 @@ _Label_313:
 	load	[r14+-348],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	98,r13		! source line 98
+	mov	101,r13		! source line 101
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_316
 _Label_314:
 ! ELSE...
-	mov	100,r13		! source line 100
+	mov	103,r13		! source line 103
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_317 = _StringConst_23
@@ -10789,13 +10789,13 @@ _Label_314:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	100,r13		! source line 100
+	mov	103,r13		! source line 103
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_316:
 ! ASSIGNMENT STATEMENT...
-	mov	102,r13		! source line 102
+	mov	105,r13		! source line 105
 	mov	"\0\0AS",r10
 !   _temp_319 = &UserBuffer
 	add	r14,-532,r1
@@ -10832,14 +10832,14 @@ _Label_316:
 	mov	2,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	102,r13		! source line 102
+	mov	105,r13		! source line 105
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	104,r13		! source line 104
+	mov	107,r13		! source line 107
 	mov	"\0\0IF",r10
 !   if i != 2 then goto _Label_322		(int)
 	load	[r14+-516],r1
@@ -10849,7 +10849,7 @@ _Label_316:
 !	jmp	_Label_321
 _Label_321:
 ! THEN...
-	mov	105,r13		! source line 105
+	mov	108,r13		! source line 108
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_323 = _StringConst_24
@@ -10859,13 +10859,13 @@ _Label_321:
 	load	[r14+-328],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	105,r13		! source line 105
+	mov	108,r13		! source line 108
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_324
 _Label_322:
 ! ELSE...
-	mov	107,r13		! source line 107
+	mov	110,r13		! source line 110
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_325 = _StringConst_25
@@ -10878,13 +10878,13 @@ _Label_322:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	107,r13		! source line 107
+	mov	110,r13		! source line 110
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_324:
 ! IF STATEMENT...
-	mov	110,r13		! source line 110
+	mov	113,r13		! source line 113
 	mov	"\0\0IF",r10
 !   _temp_329 = &UserBuffer
 	add	r14,-532,r1
@@ -10899,7 +10899,7 @@ _Label_324:
 	load	[r14+-312],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	110,r13		! source line 110
+	mov	113,r13		! source line 113
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCmp
 !   Retrieve Result: targetName=_temp_328  sizeInBytes=4
@@ -10912,7 +10912,7 @@ _Label_324:
 	jmp	_Label_327
 _Label_326:
 ! THEN...
-	mov	111,r13		! source line 111
+	mov	114,r13		! source line 114
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_331 = _StringConst_27
@@ -10922,13 +10922,13 @@ _Label_326:
 	load	[r14+-308],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	111,r13		! source line 111
+	mov	114,r13		! source line 114
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_332
 _Label_327:
 ! ELSE...
-	mov	113,r13		! source line 113
+	mov	116,r13		! source line 116
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_333 = _StringConst_28
@@ -10938,7 +10938,7 @@ _Label_327:
 	load	[r14+-304],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	113,r13		! source line 113
+	mov	116,r13		! source line 116
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10949,7 +10949,7 @@ _Label_327:
 	load	[r14+-300],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	114,r13		! source line 114
+	mov	117,r13		! source line 117
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10960,7 +10960,7 @@ _Label_327:
 	load	[r14+-296],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	115,r13		! source line 115
+	mov	118,r13		! source line 118
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -10971,7 +10971,7 @@ _Label_327:
 	load	[r14+-292],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	116,r13		! source line 116
+	mov	119,r13		! source line 119
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -10984,7 +10984,7 @@ _Label_332:
 	load	[r14+-288],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	120,r13		! source line 120
+	mov	123,r13		! source line 123
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11001,11 +11001,11 @@ _Label_332:
 	load	[r14+-280],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	121,r13		! source line 121
+	mov	124,r13		! source line 124
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCopy
 ! ASSIGNMENT STATEMENT...
-	mov	122,r13		! source line 122
+	mov	125,r13		! source line 125
 	mov	"\0\0AS",r10
 !   _temp_341 = &UserBuffer
 	add	r14,-532,r1
@@ -11042,14 +11042,14 @@ _Label_332:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	122,r13		! source line 122
+	mov	125,r13		! source line 125
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	124,r13		! source line 124
+	mov	127,r13		! source line 127
 	mov	"\0\0IF",r10
 !   if i != 1 then goto _Label_344		(int)
 	load	[r14+-516],r1
@@ -11059,7 +11059,7 @@ _Label_332:
 !	jmp	_Label_343
 _Label_343:
 ! THEN...
-	mov	125,r13		! source line 125
+	mov	128,r13		! source line 128
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_345 = _StringConst_33
@@ -11069,13 +11069,13 @@ _Label_343:
 	load	[r14+-264],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	125,r13		! source line 125
+	mov	128,r13		! source line 128
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_346
 _Label_344:
 ! ELSE...
-	mov	127,r13		! source line 127
+	mov	130,r13		! source line 130
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_347 = _StringConst_34
@@ -11088,13 +11088,13 @@ _Label_344:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	127,r13		! source line 127
+	mov	130,r13		! source line 130
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_346:
 ! IF STATEMENT...
-	mov	130,r13		! source line 130
+	mov	133,r13		! source line 133
 	mov	"\0\0IF",r10
 !   _temp_351 = &UserBuffer
 	add	r14,-532,r1
@@ -11109,7 +11109,7 @@ _Label_346:
 	load	[r14+-248],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	130,r13		! source line 130
+	mov	133,r13		! source line 133
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCmp
 !   Retrieve Result: targetName=_temp_350  sizeInBytes=4
@@ -11122,7 +11122,7 @@ _Label_346:
 	jmp	_Label_349
 _Label_348:
 ! THEN...
-	mov	131,r13		! source line 131
+	mov	134,r13		! source line 134
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_353 = _StringConst_36
@@ -11132,13 +11132,13 @@ _Label_348:
 	load	[r14+-244],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	131,r13		! source line 131
+	mov	134,r13		! source line 134
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_354
 _Label_349:
 ! ELSE...
-	mov	133,r13		! source line 133
+	mov	136,r13		! source line 136
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_355 = _StringConst_37
@@ -11148,7 +11148,7 @@ _Label_349:
 	load	[r14+-240],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	133,r13		! source line 133
+	mov	136,r13		! source line 136
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11159,7 +11159,7 @@ _Label_349:
 	load	[r14+-236],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	134,r13		! source line 134
+	mov	137,r13		! source line 137
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11170,7 +11170,7 @@ _Label_349:
 	load	[r14+-232],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	135,r13		! source line 135
+	mov	138,r13		! source line 138
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11181,7 +11181,7 @@ _Label_349:
 	load	[r14+-228],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	136,r13		! source line 136
+	mov	139,r13		! source line 139
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -11194,7 +11194,7 @@ _Label_354:
 	load	[r14+-224],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	140,r13		! source line 140
+	mov	143,r13		! source line 143
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11211,11 +11211,11 @@ _Label_354:
 	load	[r14+-216],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	141,r13		! source line 141
+	mov	144,r13		! source line 144
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCopy
 ! ASSIGNMENT STATEMENT...
-	mov	142,r13		! source line 142
+	mov	145,r13		! source line 145
 	mov	"\0\0AS",r10
 !   _temp_363 = &UserBuffer
 	add	r14,-532,r1
@@ -11252,14 +11252,14 @@ _Label_354:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	142,r13		! source line 142
+	mov	145,r13		! source line 145
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	144,r13		! source line 144
+	mov	147,r13		! source line 147
 	mov	"\0\0IF",r10
 !   if i != 1 then goto _Label_366		(int)
 	load	[r14+-516],r1
@@ -11269,7 +11269,7 @@ _Label_354:
 !	jmp	_Label_365
 _Label_365:
 ! THEN...
-	mov	145,r13		! source line 145
+	mov	148,r13		! source line 148
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_367 = _StringConst_42
@@ -11279,13 +11279,13 @@ _Label_365:
 	load	[r14+-200],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	145,r13		! source line 145
+	mov	148,r13		! source line 148
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_368
 _Label_366:
 ! ELSE...
-	mov	147,r13		! source line 147
+	mov	150,r13		! source line 150
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_369 = _StringConst_43
@@ -11298,13 +11298,13 @@ _Label_366:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	147,r13		! source line 147
+	mov	150,r13		! source line 150
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_368:
 ! IF STATEMENT...
-	mov	150,r13		! source line 150
+	mov	153,r13		! source line 153
 	mov	"\0\0IF",r10
 !   _temp_373 = &UserBuffer
 	add	r14,-532,r1
@@ -11319,7 +11319,7 @@ _Label_368:
 	load	[r14+-184],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	150,r13		! source line 150
+	mov	153,r13		! source line 153
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCmp
 !   Retrieve Result: targetName=_temp_372  sizeInBytes=4
@@ -11332,7 +11332,7 @@ _Label_368:
 	jmp	_Label_371
 _Label_370:
 ! THEN...
-	mov	151,r13		! source line 151
+	mov	154,r13		! source line 154
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_375 = _StringConst_45
@@ -11342,16 +11342,16 @@ _Label_370:
 	load	[r14+-180],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	151,r13		! source line 151
+	mov	154,r13		! source line 154
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_376
 _Label_371:
 ! ELSE...
-	mov	152,r13		! source line 152
+	mov	155,r13		! source line 155
 	mov	"\0\0EL",r10
 ! IF STATEMENT...
-	mov	152,r13		! source line 152
+	mov	155,r13		! source line 155
 	mov	"\0\0IF",r10
 !   _temp_380 = &UserBuffer
 	add	r14,-532,r1
@@ -11366,7 +11366,7 @@ _Label_371:
 	load	[r14+-168],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	152,r13		! source line 152
+	mov	155,r13		! source line 155
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCmp
 !   Retrieve Result: targetName=_temp_379  sizeInBytes=4
@@ -11379,7 +11379,7 @@ _Label_371:
 	jmp	_Label_378
 _Label_377:
 ! THEN...
-	mov	153,r13		! source line 153
+	mov	156,r13		! source line 156
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_382 = _StringConst_47
@@ -11389,13 +11389,13 @@ _Label_377:
 	load	[r14+-164],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	153,r13		! source line 153
+	mov	156,r13		! source line 156
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_383
 _Label_378:
 ! ELSE...
-	mov	155,r13		! source line 155
+	mov	158,r13		! source line 158
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_384 = _StringConst_48
@@ -11405,7 +11405,7 @@ _Label_378:
 	load	[r14+-160],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	155,r13		! source line 155
+	mov	158,r13		! source line 158
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11416,7 +11416,7 @@ _Label_378:
 	load	[r14+-156],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	156,r13		! source line 156
+	mov	159,r13		! source line 159
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11427,7 +11427,7 @@ _Label_378:
 	load	[r14+-152],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	157,r13		! source line 157
+	mov	160,r13		! source line 160
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11438,7 +11438,7 @@ _Label_378:
 	load	[r14+-148],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	158,r13		! source line 158
+	mov	161,r13		! source line 161
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -11453,7 +11453,7 @@ _Label_376:
 	load	[r14+-144],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	162,r13		! source line 162
+	mov	165,r13		! source line 165
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11470,11 +11470,11 @@ _Label_376:
 	load	[r14+-136],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	163,r13		! source line 163
+	mov	166,r13		! source line 166
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCopy
 ! ASSIGNMENT STATEMENT...
-	mov	164,r13		! source line 164
+	mov	167,r13		! source line 167
 	mov	"\0\0AS",r10
 !   _temp_392 = &UserBuffer
 	add	r14,-532,r1
@@ -11511,14 +11511,14 @@ _Label_376:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	164,r13		! source line 164
+	mov	167,r13		! source line 167
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	166,r13		! source line 166
+	mov	169,r13		! source line 169
 	mov	"\0\0IF",r10
 !   if i != 1 then goto _Label_395		(int)
 	load	[r14+-516],r1
@@ -11528,7 +11528,7 @@ _Label_376:
 !	jmp	_Label_394
 _Label_394:
 ! THEN...
-	mov	167,r13		! source line 167
+	mov	170,r13		! source line 170
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_396 = _StringConst_53
@@ -11538,13 +11538,13 @@ _Label_394:
 	load	[r14+-120],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	167,r13		! source line 167
+	mov	170,r13		! source line 170
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_397
 _Label_395:
 ! ELSE...
-	mov	169,r13		! source line 169
+	mov	172,r13		! source line 172
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_398 = _StringConst_54
@@ -11557,13 +11557,13 @@ _Label_395:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	169,r13		! source line 169
+	mov	172,r13		! source line 172
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_397:
 ! IF STATEMENT...
-	mov	172,r13		! source line 172
+	mov	175,r13		! source line 175
 	mov	"\0\0IF",r10
 !   _temp_402 = &UserBuffer
 	add	r14,-532,r1
@@ -11578,7 +11578,7 @@ _Label_397:
 	load	[r14+-104],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	172,r13		! source line 172
+	mov	175,r13		! source line 175
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCmp
 !   Retrieve Result: targetName=_temp_401  sizeInBytes=4
@@ -11591,7 +11591,7 @@ _Label_397:
 	jmp	_Label_400
 _Label_399:
 ! THEN...
-	mov	173,r13		! source line 173
+	mov	176,r13		! source line 176
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_404 = _StringConst_56
@@ -11601,13 +11601,13 @@ _Label_399:
 	load	[r14+-100],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	173,r13		! source line 173
+	mov	176,r13		! source line 176
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_405
 _Label_400:
 ! ELSE...
-	mov	175,r13		! source line 175
+	mov	178,r13		! source line 178
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_406 = _StringConst_57
@@ -11617,7 +11617,7 @@ _Label_400:
 	load	[r14+-96],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	175,r13		! source line 175
+	mov	178,r13		! source line 178
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11628,7 +11628,7 @@ _Label_400:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	176,r13		! source line 176
+	mov	179,r13		! source line 179
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11639,7 +11639,7 @@ _Label_400:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	177,r13		! source line 177
+	mov	180,r13		! source line 180
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11650,7 +11650,7 @@ _Label_400:
 	load	[r14+-84],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	178,r13		! source line 178
+	mov	181,r13		! source line 181
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -11663,7 +11663,7 @@ _Label_405:
 	load	[r14+-80],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	182,r13		! source line 182
+	mov	185,r13		! source line 185
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11680,11 +11680,11 @@ _Label_405:
 	load	[r14+-72],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	183,r13		! source line 183
+	mov	186,r13		! source line 186
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCopy
 ! ASSIGNMENT STATEMENT...
-	mov	184,r13		! source line 184
+	mov	187,r13		! source line 187
 	mov	"\0\0AS",r10
 !   _temp_414 = &UserBuffer
 	add	r14,-532,r1
@@ -11721,14 +11721,14 @@ _Label_405:
 	mov	5,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	184,r13		! source line 184
+	mov	187,r13		! source line 187
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-516]
 ! IF STATEMENT...
-	mov	186,r13		! source line 186
+	mov	189,r13		! source line 189
 	mov	"\0\0IF",r10
 !   if intIsZero (i) then goto _Label_416
 	load	[r14+-516],r1
@@ -11737,7 +11737,7 @@ _Label_405:
 	jmp	_Label_417
 _Label_416:
 ! THEN...
-	mov	187,r13		! source line 187
+	mov	190,r13		! source line 190
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_418 = _StringConst_62
@@ -11747,13 +11747,13 @@ _Label_416:
 	load	[r14+-56],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	187,r13		! source line 187
+	mov	190,r13		! source line 190
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_419
 _Label_417:
 ! ELSE...
-	mov	189,r13		! source line 189
+	mov	192,r13		! source line 192
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_420 = _StringConst_63
@@ -11766,13 +11766,13 @@ _Label_417:
 	load	[r14+-516],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	189,r13		! source line 189
+	mov	192,r13		! source line 192
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_419:
 ! IF STATEMENT...
-	mov	192,r13		! source line 192
+	mov	195,r13		! source line 195
 	mov	"\0\0IF",r10
 !   _temp_424 = &UserBuffer
 	add	r14,-532,r1
@@ -11787,7 +11787,7 @@ _Label_419:
 	load	[r14+-40],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	192,r13		! source line 192
+	mov	195,r13		! source line 195
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrCmp
 !   Retrieve Result: targetName=_temp_423  sizeInBytes=4
@@ -11800,7 +11800,7 @@ _Label_419:
 	jmp	_Label_422
 _Label_421:
 ! THEN...
-	mov	193,r13		! source line 193
+	mov	196,r13		! source line 196
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_426 = _StringConst_65
@@ -11810,13 +11810,13 @@ _Label_421:
 	load	[r14+-36],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	193,r13		! source line 193
+	mov	196,r13		! source line 196
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_427
 _Label_422:
 ! ELSE...
-	mov	195,r13		! source line 195
+	mov	198,r13		! source line 198
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_428 = _StringConst_66
@@ -11826,7 +11826,7 @@ _Label_422:
 	load	[r14+-32],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	195,r13		! source line 195
+	mov	198,r13		! source line 198
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11837,7 +11837,7 @@ _Label_422:
 	load	[r14+-28],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	196,r13		! source line 196
+	mov	199,r13		! source line 199
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11848,7 +11848,7 @@ _Label_422:
 	load	[r14+-24],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	197,r13		! source line 197
+	mov	200,r13		! source line 200
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11859,7 +11859,7 @@ _Label_422:
 	load	[r14+-20],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	198,r13		! source line 198
+	mov	201,r13		! source line 201
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -11872,7 +11872,7 @@ _Label_427:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	201,r13		! source line 201
+	mov	204,r13		! source line 204
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -11880,11 +11880,11 @@ _Label_427:
 	load	[r14+-512],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	202,r13		! source line 202
+	mov	205,r13		! source line 205
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! RETURN STATEMENT...
-	mov	202,r13		! source line 202
+	mov	205,r13		! source line 205
 	mov	"\0\0RE",r10
 	add	r15,540,r15
 	pop	r13
@@ -12805,7 +12805,7 @@ _Label_1274:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1274
-	mov	208,r13		! source line 208
+	mov	211,r13		! source line 211
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
@@ -12816,7 +12816,7 @@ _Label_1274:
 	load	[r14+-96],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	217,r13		! source line 217
+	mov	220,r13		! source line 220
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12827,7 +12827,7 @@ _Label_1274:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	218,r13		! source line 218
+	mov	221,r13		! source line 221
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12838,7 +12838,7 @@ _Label_1274:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	219,r13		! source line 219
+	mov	222,r13		! source line 222
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12849,7 +12849,7 @@ _Label_1274:
 	load	[r14+-84],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	220,r13		! source line 220
+	mov	223,r13		! source line 223
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12860,7 +12860,7 @@ _Label_1274:
 	load	[r14+-80],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	221,r13		! source line 221
+	mov	224,r13		! source line 224
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12871,7 +12871,7 @@ _Label_1274:
 	load	[r14+-76],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	222,r13		! source line 222
+	mov	225,r13		! source line 225
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12882,7 +12882,7 @@ _Label_1274:
 	load	[r14+-72],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	223,r13		! source line 223
+	mov	226,r13		! source line 226
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12893,7 +12893,7 @@ _Label_1274:
 	load	[r14+-68],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	224,r13		! source line 224
+	mov	227,r13		! source line 227
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12904,7 +12904,7 @@ _Label_1274:
 	load	[r14+-64],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	225,r13		! source line 225
+	mov	228,r13		! source line 228
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -12915,11 +12915,11 @@ _Label_1274:
 	load	[r14+-60],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	226,r13		! source line 226
+	mov	229,r13		! source line 229
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	228,r13		! source line 228
+	mov	231,r13		! source line 231
 	mov	"\0\0AS",r10
 !   _temp_571 = _StringConst_80
 	set	_StringConst_80,r1
@@ -12928,14 +12928,14 @@ _Label_1274:
 	load	[r14+-56],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	228,r13		! source line 228
+	mov	231,r13		! source line 231
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-100]
 ! IF STATEMENT...
-	mov	229,r13		! source line 229
+	mov	232,r13		! source line 232
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_573		(int)
 	load	[r14+-100],r1
@@ -12946,7 +12946,7 @@ _Label_1274:
 !	jmp	_Label_572
 _Label_572:
 ! THEN...
-	mov	230,r13		! source line 230
+	mov	233,r13		! source line 233
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_574 = _StringConst_81
@@ -12959,21 +12959,21 @@ _Label_572:
 	load	[r14+-100],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	230,r13		! source line 230
+	mov	233,r13		! source line 233
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_573:
 ! WHILE STATEMENT...
-	mov	233,r13		! source line 233
+	mov	236,r13		! source line 236
 	mov	"\0\0WH",r10
 _Label_575:
 !	jmp	_Label_576
 _Label_576:
-	mov	233,r13		! source line 233
+	mov	236,r13		! source line 236
 	mov	"\0\0WB",r10
 ! ASSIGNMENT STATEMENT...
-	mov	235,r13		! source line 235
+	mov	238,r13		! source line 238
 	mov	"\0\0AS",r10
 !   _temp_578 = &ch
 	add	r14,-10,r1
@@ -12988,14 +12988,14 @@ _Label_576:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	235,r13		! source line 235
+	mov	238,r13		! source line 238
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-104]
 ! IF STATEMENT...
-	mov	236,r13		! source line 236
+	mov	239,r13		! source line 239
 	mov	"\0\0IF",r10
 !   if intIsZero (i) then goto _Label_579
 	load	[r14+-104],r1
@@ -13004,7 +13004,7 @@ _Label_576:
 	jmp	_Label_580
 _Label_579:
 ! THEN...
-	mov	237,r13		! source line 237
+	mov	240,r13		! source line 240
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_581 = _StringConst_82
@@ -13014,16 +13014,16 @@ _Label_579:
 	load	[r14+-44],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	237,r13		! source line 237
+	mov	240,r13		! source line 240
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_582
 _Label_580:
 ! ELSE...
-	mov	238,r13		! source line 238
+	mov	241,r13		! source line 241
 	mov	"\0\0EL",r10
 ! IF STATEMENT...
-	mov	238,r13		! source line 238
+	mov	241,r13		! source line 241
 	mov	"\0\0IF",r10
 !   if i == 1 then goto _Label_584		(int)
 	load	[r14+-104],r1
@@ -13033,7 +13033,7 @@ _Label_580:
 !	jmp	_Label_583
 _Label_583:
 ! THEN...
-	mov	239,r13		! source line 239
+	mov	242,r13		! source line 242
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_585 = _StringConst_83
@@ -13046,13 +13046,13 @@ _Label_583:
 	load	[r14+-104],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	239,r13		! source line 239
+	mov	242,r13		! source line 242
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 	jmp	_Label_586
 _Label_584:
 ! ELSE...
-	mov	241,r13		! source line 241
+	mov	244,r13		! source line 244
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_587 = _StringConst_84
@@ -13062,7 +13062,7 @@ _Label_584:
 	load	[r14+-36],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	241,r13		! source line 241
+	mov	244,r13		! source line 244
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13075,7 +13075,7 @@ _Label_584:
 	load	[r14+-32],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	242,r13		! source line 242
+	mov	245,r13		! source line 245
 	mov	"\0\0CE",r10
 	call	printHex
 ! CALL STATEMENT...
@@ -13086,7 +13086,7 @@ _Label_584:
 	load	[r14+-28],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	243,r13		! source line 243
+	mov	246,r13		! source line 246
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13099,7 +13099,7 @@ _Label_584:
 	load	[r14+-24],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	244,r13		! source line 244
+	mov	247,r13		! source line 247
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -13110,7 +13110,7 @@ _Label_584:
 	load	[r14+-20],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	245,r13		! source line 245
+	mov	248,r13		! source line 248
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -13118,7 +13118,7 @@ _Label_586:
 ! END IF...
 _Label_582:
 ! IF STATEMENT...
-	mov	250,r13		! source line 250
+	mov	253,r13		! source line 253
 	mov	"\0\0IF",r10
 !   _temp_594 = ch XOR 113		(bool)
 	loadb	[r14+-10],r1
@@ -13132,7 +13132,7 @@ _Label_582:
 	jmp	_Label_593
 _Label_592:
 ! THEN...
-	mov	251,r13		! source line 251
+	mov	254,r13		! source line 254
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_595 = _StringConst_87
@@ -13142,7 +13142,7 @@ _Label_592:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	251,r13		! source line 251
+	mov	254,r13		! source line 254
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13150,11 +13150,11 @@ _Label_592:
 	load	[r14+-100],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	252,r13		! source line 252
+	mov	255,r13		! source line 255
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! RETURN STATEMENT...
-	mov	253,r13		! source line 253
+	mov	256,r13		! source line 256
 	mov	"\0\0RE",r10
 	add	r15,112,r15
 	pop	r13
@@ -13366,7 +13366,7 @@ _Label_1275:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1275
-	mov	261,r13		! source line 261
+	mov	264,r13		! source line 264
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
@@ -13377,7 +13377,7 @@ _Label_1275:
 	load	[r14+-108],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	270,r13		! source line 270
+	mov	273,r13		! source line 273
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13388,7 +13388,7 @@ _Label_1275:
 	load	[r14+-104],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	272,r13		! source line 272
+	mov	275,r13		! source line 275
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13399,7 +13399,7 @@ _Label_1275:
 	load	[r14+-100],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	273,r13		! source line 273
+	mov	276,r13		! source line 276
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13410,7 +13410,7 @@ _Label_1275:
 	load	[r14+-96],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	274,r13		! source line 274
+	mov	277,r13		! source line 277
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13421,7 +13421,7 @@ _Label_1275:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	275,r13		! source line 275
+	mov	278,r13		! source line 278
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13432,7 +13432,7 @@ _Label_1275:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	276,r13		! source line 276
+	mov	279,r13		! source line 279
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13443,7 +13443,7 @@ _Label_1275:
 	load	[r14+-84],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	277,r13		! source line 277
+	mov	280,r13		! source line 280
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13454,7 +13454,7 @@ _Label_1275:
 	load	[r14+-80],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	278,r13		! source line 278
+	mov	281,r13		! source line 281
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13465,7 +13465,7 @@ _Label_1275:
 	load	[r14+-76],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	279,r13		! source line 279
+	mov	282,r13		! source line 282
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13476,7 +13476,7 @@ _Label_1275:
 	load	[r14+-72],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	280,r13		! source line 280
+	mov	283,r13		! source line 283
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13487,7 +13487,7 @@ _Label_1275:
 	load	[r14+-68],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	281,r13		! source line 281
+	mov	284,r13		! source line 284
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13498,7 +13498,7 @@ _Label_1275:
 	load	[r14+-64],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	282,r13		! source line 282
+	mov	285,r13		! source line 285
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13509,7 +13509,7 @@ _Label_1275:
 	load	[r14+-60],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	283,r13		! source line 283
+	mov	286,r13		! source line 286
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13520,7 +13520,7 @@ _Label_1275:
 	load	[r14+-56],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	284,r13		! source line 284
+	mov	287,r13		! source line 287
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13531,7 +13531,7 @@ _Label_1275:
 	load	[r14+-52],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	285,r13		! source line 285
+	mov	288,r13		! source line 288
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13542,11 +13542,11 @@ _Label_1275:
 	load	[r14+-48],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	286,r13		! source line 286
+	mov	289,r13		! source line 289
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	288,r13		! source line 288
+	mov	291,r13		! source line 291
 	mov	"\0\0AS",r10
 !   _temp_638 = _StringConst_104
 	set	_StringConst_104,r1
@@ -13555,14 +13555,14 @@ _Label_1275:
 	load	[r14+-44],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	288,r13		! source line 288
+	mov	291,r13		! source line 291
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-112]
 ! IF STATEMENT...
-	mov	289,r13		! source line 289
+	mov	292,r13		! source line 292
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_640		(int)
 	load	[r14+-112],r1
@@ -13573,7 +13573,7 @@ _Label_1275:
 !	jmp	_Label_639
 _Label_639:
 ! THEN...
-	mov	290,r13		! source line 290
+	mov	293,r13		! source line 293
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_641 = _StringConst_105
@@ -13586,21 +13586,21 @@ _Label_639:
 	load	[r14+-112],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	290,r13		! source line 290
+	mov	293,r13		! source line 293
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_640:
 ! WHILE STATEMENT...
-	mov	293,r13		! source line 293
+	mov	296,r13		! source line 296
 	mov	"\0\0WH",r10
 _Label_642:
 !	jmp	_Label_643
 _Label_643:
-	mov	293,r13		! source line 293
+	mov	296,r13		! source line 296
 	mov	"\0\0WB",r10
 ! ASSIGNMENT STATEMENT...
-	mov	295,r13		! source line 295
+	mov	298,r13		! source line 298
 	mov	"\0\0AS",r10
 !   _temp_645 = &ch
 	add	r14,-10,r1
@@ -13615,14 +13615,14 @@ _Label_643:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	295,r13		! source line 295
+	mov	298,r13		! source line 298
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-116]
 ! IF STATEMENT...
-	mov	297,r13		! source line 297
+	mov	300,r13		! source line 300
 	mov	"\0\0IF",r10
 !   if intIsZero (i) then goto _Label_646
 	load	[r14+-116],r1
@@ -13631,7 +13631,7 @@ _Label_643:
 	jmp	_Label_647
 _Label_646:
 ! THEN...
-	mov	298,r13		! source line 298
+	mov	301,r13		! source line 301
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_648 = _StringConst_106
@@ -13641,16 +13641,16 @@ _Label_646:
 	load	[r14+-32],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	298,r13		! source line 298
+	mov	301,r13		! source line 301
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_649
 _Label_647:
 ! ELSE...
-	mov	299,r13		! source line 299
+	mov	302,r13		! source line 302
 	mov	"\0\0EL",r10
 ! IF STATEMENT...
-	mov	299,r13		! source line 299
+	mov	302,r13		! source line 302
 	mov	"\0\0IF",r10
 !   if i == 1 then goto _Label_651		(int)
 	load	[r14+-116],r1
@@ -13660,7 +13660,7 @@ _Label_647:
 !	jmp	_Label_650
 _Label_650:
 ! THEN...
-	mov	300,r13		! source line 300
+	mov	303,r13		! source line 303
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_652 = _StringConst_107
@@ -13673,16 +13673,16 @@ _Label_650:
 	load	[r14+-116],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	300,r13		! source line 300
+	mov	303,r13		! source line 303
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 	jmp	_Label_653
 _Label_651:
 ! ELSE...
-	mov	303,r13		! source line 303
+	mov	306,r13		! source line 306
 	mov	"\0\0EL",r10
 ! ASSIGNMENT STATEMENT...
-	mov	303,r13		! source line 303
+	mov	306,r13		! source line 306
 	mov	"\0\0AS",r10
 !   _temp_654 = &ch
 	add	r14,-10,r1
@@ -13697,14 +13697,14 @@ _Label_651:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	303,r13		! source line 303
+	mov	306,r13		! source line 306
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-116]
 ! IF STATEMENT...
-	mov	304,r13		! source line 304
+	mov	307,r13		! source line 307
 	mov	"\0\0IF",r10
 !   if i == 1 then goto _Label_656		(int)
 	load	[r14+-116],r1
@@ -13714,7 +13714,7 @@ _Label_651:
 !	jmp	_Label_655
 _Label_655:
 ! THEN...
-	mov	305,r13		! source line 305
+	mov	308,r13		! source line 308
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_657 = _StringConst_108
@@ -13727,7 +13727,7 @@ _Label_655:
 	load	[r14+-116],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	305,r13		! source line 305
+	mov	308,r13		! source line 308
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
@@ -13737,7 +13737,7 @@ _Label_653:
 ! END IF...
 _Label_649:
 ! IF STATEMENT...
-	mov	309,r13		! source line 309
+	mov	312,r13		! source line 312
 	mov	"\0\0IF",r10
 !   _temp_660 = ch XOR 113		(bool)
 	loadb	[r14+-10],r1
@@ -13751,7 +13751,7 @@ _Label_649:
 	jmp	_Label_659
 _Label_658:
 ! THEN...
-	mov	310,r13		! source line 310
+	mov	313,r13		! source line 313
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_661 = _StringConst_109
@@ -13761,7 +13761,7 @@ _Label_658:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	310,r13		! source line 310
+	mov	313,r13		! source line 313
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -13769,11 +13769,11 @@ _Label_658:
 	load	[r14+-112],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	311,r13		! source line 311
+	mov	314,r13		! source line 314
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! RETURN STATEMENT...
-	mov	312,r13		! source line 312
+	mov	315,r13		! source line 315
 	mov	"\0\0RE",r10
 	add	r15,124,r15
 	pop	r13
@@ -14006,7 +14006,7 @@ _Label_1276:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1276
-	mov	322,r13		! source line 322
+	mov	325,r13		! source line 325
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! smallBuff
@@ -14070,7 +14070,7 @@ _Label_1277:
 	load	[r14+-132],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	331,r13		! source line 331
+	mov	334,r13		! source line 334
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14081,7 +14081,7 @@ _Label_1277:
 	load	[r14+-128],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	332,r13		! source line 332
+	mov	335,r13		! source line 335
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14089,7 +14089,7 @@ _Label_1277:
 	mov	30,r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	333,r13		! source line 333
+	mov	336,r13		! source line 336
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -14100,7 +14100,7 @@ _Label_1277:
 	load	[r14+-124],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	334,r13		! source line 334
+	mov	337,r13		! source line 337
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14111,7 +14111,7 @@ _Label_1277:
 	load	[r14+-120],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	335,r13		! source line 335
+	mov	338,r13		! source line 338
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14122,7 +14122,7 @@ _Label_1277:
 	load	[r14+-116],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	336,r13		! source line 336
+	mov	339,r13		! source line 339
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14133,7 +14133,7 @@ _Label_1277:
 	load	[r14+-112],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	337,r13		! source line 337
+	mov	340,r13		! source line 340
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14144,7 +14144,7 @@ _Label_1277:
 	load	[r14+-108],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	338,r13		! source line 338
+	mov	341,r13		! source line 341
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14155,7 +14155,7 @@ _Label_1277:
 	load	[r14+-104],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	339,r13		! source line 339
+	mov	342,r13		! source line 342
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14166,7 +14166,7 @@ _Label_1277:
 	load	[r14+-100],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	340,r13		! source line 340
+	mov	343,r13		! source line 343
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14177,7 +14177,7 @@ _Label_1277:
 	load	[r14+-96],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	341,r13		! source line 341
+	mov	344,r13		! source line 344
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14188,7 +14188,7 @@ _Label_1277:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	342,r13		! source line 342
+	mov	345,r13		! source line 345
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14199,7 +14199,7 @@ _Label_1277:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	343,r13		! source line 343
+	mov	346,r13		! source line 346
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14210,7 +14210,7 @@ _Label_1277:
 	load	[r14+-84],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	344,r13		! source line 344
+	mov	347,r13		! source line 347
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14221,7 +14221,7 @@ _Label_1277:
 	load	[r14+-80],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	345,r13		! source line 345
+	mov	348,r13		! source line 348
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14232,7 +14232,7 @@ _Label_1277:
 	load	[r14+-76],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	346,r13		! source line 346
+	mov	349,r13		! source line 349
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14243,7 +14243,7 @@ _Label_1277:
 	load	[r14+-72],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	347,r13		! source line 347
+	mov	350,r13		! source line 350
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14254,11 +14254,11 @@ _Label_1277:
 	load	[r14+-68],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	348,r13		! source line 348
+	mov	351,r13		! source line 351
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	350,r13		! source line 350
+	mov	353,r13		! source line 353
 	mov	"\0\0AS",r10
 !   _temp_713 = _StringConst_127
 	set	_StringConst_127,r1
@@ -14267,14 +14267,14 @@ _Label_1277:
 	load	[r14+-64],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	350,r13		! source line 350
+	mov	353,r13		! source line 353
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-184]
 ! IF STATEMENT...
-	mov	351,r13		! source line 351
+	mov	354,r13		! source line 354
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_715		(int)
 	load	[r14+-184],r1
@@ -14285,7 +14285,7 @@ _Label_1277:
 !	jmp	_Label_714
 _Label_714:
 ! THEN...
-	mov	352,r13		! source line 352
+	mov	355,r13		! source line 355
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_716 = _StringConst_128
@@ -14298,21 +14298,21 @@ _Label_714:
 	load	[r14+-184],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	352,r13		! source line 352
+	mov	355,r13		! source line 355
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_715:
 ! WHILE STATEMENT...
-	mov	355,r13		! source line 355
+	mov	358,r13		! source line 358
 	mov	"\0\0WH",r10
 _Label_717:
 !	jmp	_Label_718
 _Label_718:
-	mov	355,r13		! source line 355
+	mov	358,r13		! source line 358
 	mov	"\0\0WB",r10
 ! ASSIGNMENT STATEMENT...
-	mov	356,r13		! source line 356
+	mov	359,r13		! source line 359
 	mov	"\0\0AS",r10
 !   _temp_721 = &smallBuff
 	add	r14,-228,r1
@@ -14349,7 +14349,7 @@ _Label_718:
 	mov	30,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	356,r13		! source line 356
+	mov	359,r13		! source line 359
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -14366,11 +14366,11 @@ _Label_718:
 	load	[r14+-188],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	357,r13		! source line 357
+	mov	360,r13		! source line 360
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! ASSIGNMENT STATEMENT...
-	mov	358,r13		! source line 358
+	mov	361,r13		! source line 361
 	mov	"\0\0AS",r10
 !   _temp_725 = &smallBuff
 	add	r14,-228,r1
@@ -14407,14 +14407,14 @@ _Label_718:
 	load	[r14+-188],r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	358,r13		! source line 358
+	mov	361,r13		! source line 361
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=j  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-192]
 ! IF STATEMENT...
-	mov	359,r13		! source line 359
+	mov	362,r13		! source line 362
 	mov	"\0\0IF",r10
 !   if i == j then goto _Label_728		(int)
 	load	[r14+-188],r1
@@ -14424,7 +14424,7 @@ _Label_718:
 !	jmp	_Label_727
 _Label_727:
 ! THEN...
-	mov	360,r13		! source line 360
+	mov	363,r13		! source line 363
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_729 = _StringConst_130
@@ -14437,13 +14437,13 @@ _Label_727:
 	load	[r14+-192],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	360,r13		! source line 360
+	mov	363,r13		! source line 363
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
 _Label_728:
 ! IF STATEMENT...
-	mov	362,r13		! source line 362
+	mov	365,r13		! source line 365
 	mov	"\0\0IF",r10
 !   _temp_733 = &smallBuff
 	add	r14,-228,r1
@@ -14483,7 +14483,7 @@ _Label_728:
 	jmp	_Label_731
 _Label_730:
 ! THEN...
-	mov	363,r13		! source line 363
+	mov	366,r13		! source line 366
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_736 = _StringConst_131
@@ -14493,7 +14493,7 @@ _Label_730:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	363,r13		! source line 363
+	mov	366,r13		! source line 366
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14501,11 +14501,11 @@ _Label_730:
 	load	[r14+-184],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	364,r13		! source line 364
+	mov	367,r13		! source line 367
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! RETURN STATEMENT...
-	mov	365,r13		! source line 365
+	mov	368,r13		! source line 368
 	mov	"\0\0RE",r10
 	add	r15,236,r15
 	pop	r13
@@ -14822,7 +14822,7 @@ _Label_1278:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1278
-	mov	373,r13		! source line 373
+	mov	376,r13		! source line 376
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! buff
@@ -14918,7 +14918,7 @@ _Label_1278:
 	load	[r14+-108],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	382,r13		! source line 382
+	mov	385,r13		! source line 385
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14929,7 +14929,7 @@ _Label_1278:
 	load	[r14+-104],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	383,r13		! source line 383
+	mov	386,r13		! source line 386
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14940,7 +14940,7 @@ _Label_1278:
 	load	[r14+-100],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	384,r13		! source line 384
+	mov	387,r13		! source line 387
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14951,7 +14951,7 @@ _Label_1278:
 	load	[r14+-96],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	385,r13		! source line 385
+	mov	388,r13		! source line 388
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14962,7 +14962,7 @@ _Label_1278:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	386,r13		! source line 386
+	mov	389,r13		! source line 389
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14973,7 +14973,7 @@ _Label_1278:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	387,r13		! source line 387
+	mov	390,r13		! source line 390
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -14984,11 +14984,11 @@ _Label_1278:
 	load	[r14+-84],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	388,r13		! source line 388
+	mov	391,r13		! source line 391
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	390,r13		! source line 390
+	mov	393,r13		! source line 393
 	mov	"\0\0AS",r10
 !   _temp_789 = _StringConst_139
 	set	_StringConst_139,r1
@@ -14997,14 +14997,14 @@ _Label_1278:
 	load	[r14+-80],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	390,r13		! source line 390
+	mov	393,r13		! source line 393
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-136]
 ! IF STATEMENT...
-	mov	391,r13		! source line 391
+	mov	394,r13		! source line 394
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_791		(int)
 	load	[r14+-136],r1
@@ -15015,7 +15015,7 @@ _Label_1278:
 !	jmp	_Label_790
 _Label_790:
 ! THEN...
-	mov	392,r13		! source line 392
+	mov	395,r13		! source line 395
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_792 = _StringConst_140
@@ -15028,7 +15028,7 @@ _Label_790:
 	load	[r14+-136],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	392,r13		! source line 392
+	mov	395,r13		! source line 395
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_printIntVar
 ! END IF...
@@ -15041,11 +15041,11 @@ _Label_791:
 	load	[r14+-72],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	395,r13		! source line 395
+	mov	398,r13		! source line 398
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	396,r13		! source line 396
+	mov	399,r13		! source line 399
 	mov	"\0\0AS",r10
 !   _temp_795 = &buff
 	add	r14,-152,r1
@@ -15082,7 +15082,7 @@ _Label_791:
 	mov	6,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	396,r13		! source line 396
+	mov	399,r13		! source line 399
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -15096,11 +15096,11 @@ _Label_791:
 	mov	0,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	397,r13		! source line 397
+	mov	400,r13		! source line 400
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! IF STATEMENT...
-	mov	398,r13		! source line 398
+	mov	401,r13		! source line 401
 	mov	"\0\0IF",r10
 !   _temp_800 = &buff
 	add	r14,-152,r1
@@ -15115,7 +15115,7 @@ _Label_791:
 	load	[r14+-52],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	398,r13		! source line 398
+	mov	401,r13		! source line 401
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrEqual
 !   Retrieve Result: targetName=_temp_799  sizeInBytes=1
@@ -15128,7 +15128,7 @@ _Label_791:
 	jmp	_Label_798
 _Label_797:
 ! THEN...
-	mov	399,r13		! source line 399
+	mov	402,r13		! source line 402
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_802 = _StringConst_143
@@ -15138,7 +15138,7 @@ _Label_797:
 	load	[r14+-48],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	399,r13		! source line 399
+	mov	402,r13		! source line 402
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -15151,11 +15151,11 @@ _Label_798:
 	load	[r14+-44],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	402,r13		! source line 402
+	mov	405,r13		! source line 405
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	403,r13		! source line 403
+	mov	406,r13		! source line 406
 	mov	"\0\0AS",r10
 !   _temp_805 = &buff
 	add	r14,-152,r1
@@ -15192,7 +15192,7 @@ _Label_798:
 	mov	6,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	403,r13		! source line 403
+	mov	406,r13		! source line 406
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -15206,11 +15206,11 @@ _Label_798:
 	mov	3,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	404,r13		! source line 404
+	mov	407,r13		! source line 407
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! IF STATEMENT...
-	mov	405,r13		! source line 405
+	mov	408,r13		! source line 408
 	mov	"\0\0IF",r10
 !   _temp_810 = &buff
 	add	r14,-152,r1
@@ -15225,7 +15225,7 @@ _Label_798:
 	load	[r14+-24],r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	405,r13		! source line 405
+	mov	408,r13		! source line 408
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_StrEqual
 !   Retrieve Result: targetName=_temp_809  sizeInBytes=1
@@ -15238,7 +15238,7 @@ _Label_798:
 	jmp	_Label_808
 _Label_807:
 ! THEN...
-	mov	406,r13		! source line 406
+	mov	409,r13		! source line 409
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_812 = _StringConst_146
@@ -15248,7 +15248,7 @@ _Label_807:
 	load	[r14+-20],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	406,r13		! source line 406
+	mov	409,r13		! source line 409
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -15261,7 +15261,7 @@ _Label_808:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	409,r13		! source line 409
+	mov	412,r13		! source line 412
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -15269,11 +15269,11 @@ _Label_808:
 	load	[r14+-136],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	410,r13		! source line 410
+	mov	413,r13		! source line 413
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! RETURN STATEMENT...
-	mov	410,r13		! source line 410
+	mov	413,r13		! source line 413
 	mov	"\0\0RE",r10
 	add	r15,160,r15
 	pop	r13
@@ -15536,7 +15536,7 @@ _Label_1279:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1279
-	mov	416,r13		! source line 416
+	mov	419,r13		! source line 419
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
@@ -15547,11 +15547,11 @@ _Label_1279:
 	load	[r14+-132],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	422,r13		! source line 422
+	mov	425,r13		! source line 425
 	mov	"\0\0CE",r10
 	call	print
 ! FOR STATEMENT...
-	mov	426,r13		! source line 426
+	mov	429,r13		! source line 429
 	mov	"\0\0FO",r10
 !   Calculate and save the FOR-LOOP starting value
 !   _temp_853 = 1		(4 bytes)
@@ -15574,7 +15574,7 @@ _Label_849:
 	bvs	_runtimeErrorOverflow
 	bg	_Label_852
 _Label_850:
-	mov	426,r13		! source line 426
+	mov	429,r13		! source line 429
 	mov	"\0\0FB",r10
 ! CALL STATEMENT...
 !   _temp_855 = _StringConst_149
@@ -15584,11 +15584,11 @@ _Label_850:
 	load	[r14+-120],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	427,r13		! source line 427
+	mov	430,r13		! source line 430
 	mov	"\0\0CE",r10
 	call	print
 ! FOR STATEMENT...
-	mov	428,r13		! source line 428
+	mov	431,r13		! source line 431
 	mov	"\0\0FO",r10
 !   Calculate and save the FOR-LOOP starting value
 !   _temp_860 = 0		(4 bytes)
@@ -15611,10 +15611,10 @@ _Label_856:
 	bvs	_runtimeErrorOverflow
 	bg	_Label_859
 _Label_857:
-	mov	428,r13		! source line 428
+	mov	431,r13		! source line 431
 	mov	"\0\0FB",r10
 ! ASSIGNMENT STATEMENT...
-	mov	429,r13		! source line 429
+	mov	432,r13		! source line 432
 	mov	"\0\0AS",r10
 !   _temp_862 = _StringConst_150
 	set	_StringConst_150,r1
@@ -15623,14 +15623,14 @@ _Label_857:
 	load	[r14+-108],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	429,r13		! source line 429
+	mov	432,r13		! source line 432
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-144]
 ! IF STATEMENT...
-	mov	430,r13		! source line 430
+	mov	433,r13		! source line 433
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_864		(int)
 	load	[r14+-144],r1
@@ -15641,7 +15641,7 @@ _Label_857:
 !	jmp	_Label_863
 _Label_863:
 ! THEN...
-	mov	431,r13		! source line 431
+	mov	434,r13		! source line 434
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_865 = _StringConst_151
@@ -15651,7 +15651,7 @@ _Label_863:
 	load	[r14+-104],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	431,r13		! source line 431
+	mov	434,r13		! source line 434
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -15659,7 +15659,7 @@ _Label_863:
 	load	[r14+-144],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	432,r13		! source line 432
+	mov	435,r13		! source line 435
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -15670,16 +15670,16 @@ _Label_863:
 	load	[r14+-100],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	433,r13		! source line 433
+	mov	436,r13		! source line 436
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_867
 _Label_864:
 ! ELSE...
-	mov	434,r13		! source line 434
+	mov	437,r13		! source line 437
 	mov	"\0\0EL",r10
 ! IF STATEMENT...
-	mov	434,r13		! source line 434
+	mov	437,r13		! source line 437
 	mov	"\0\0IF",r10
 !   if fd == i then goto _Label_869		(int)
 	load	[r14+-144],r1
@@ -15689,7 +15689,7 @@ _Label_864:
 !	jmp	_Label_868
 _Label_868:
 ! THEN...
-	mov	435,r13		! source line 435
+	mov	438,r13		! source line 438
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_870 = _StringConst_153
@@ -15699,7 +15699,7 @@ _Label_868:
 	load	[r14+-96],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	435,r13		! source line 435
+	mov	438,r13		! source line 438
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -15707,7 +15707,7 @@ _Label_868:
 	load	[r14+-144],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	436,r13		! source line 436
+	mov	439,r13		! source line 439
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -15718,7 +15718,7 @@ _Label_868:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	437,r13		! source line 437
+	mov	440,r13		! source line 440
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -15743,11 +15743,11 @@ _Label_859:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	442,r13		! source line 442
+	mov	445,r13		! source line 445
 	mov	"\0\0CE",r10
 	call	print
 ! FOR STATEMENT...
-	mov	443,r13		! source line 443
+	mov	446,r13		! source line 446
 	mov	"\0\0FO",r10
 !   Calculate and save the FOR-LOOP starting value
 !   _temp_877 = 0		(4 bytes)
@@ -15770,14 +15770,14 @@ _Label_873:
 	bvs	_runtimeErrorOverflow
 	bg	_Label_876
 _Label_874:
-	mov	443,r13		! source line 443
+	mov	446,r13		! source line 446
 	mov	"\0\0FB",r10
 ! CALL STATEMENT...
 !   Prepare Argument: offset=8  value=i  sizeInBytes=4
 	load	[r14+-136],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	444,r13		! source line 444
+	mov	447,r13		! source line 447
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 !   Increment the FOR-LOOP index variable and jump back
@@ -15808,11 +15808,11 @@ _Label_852:
 	load	[r14+-76],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	448,r13		! source line 448
+	mov	451,r13		! source line 451
 	mov	"\0\0CE",r10
 	call	print
 ! FOR STATEMENT...
-	mov	449,r13		! source line 449
+	mov	452,r13		! source line 452
 	mov	"\0\0FO",r10
 !   Calculate and save the FOR-LOOP starting value
 !   _temp_884 = 0		(4 bytes)
@@ -15835,10 +15835,10 @@ _Label_880:
 	bvs	_runtimeErrorOverflow
 	bg	_Label_883
 _Label_881:
-	mov	449,r13		! source line 449
+	mov	452,r13		! source line 452
 	mov	"\0\0FB",r10
 ! ASSIGNMENT STATEMENT...
-	mov	450,r13		! source line 450
+	mov	453,r13		! source line 453
 	mov	"\0\0AS",r10
 !   _temp_886 = _StringConst_157
 	set	_StringConst_157,r1
@@ -15847,14 +15847,14 @@ _Label_881:
 	load	[r14+-64],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	450,r13		! source line 450
+	mov	453,r13		! source line 453
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-144]
 ! IF STATEMENT...
-	mov	451,r13		! source line 451
+	mov	454,r13		! source line 454
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_888		(int)
 	load	[r14+-144],r1
@@ -15865,7 +15865,7 @@ _Label_881:
 !	jmp	_Label_887
 _Label_887:
 ! THEN...
-	mov	452,r13		! source line 452
+	mov	455,r13		! source line 455
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_889 = _StringConst_158
@@ -15875,7 +15875,7 @@ _Label_887:
 	load	[r14+-60],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	452,r13		! source line 452
+	mov	455,r13		! source line 455
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -15883,7 +15883,7 @@ _Label_887:
 	load	[r14+-144],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	453,r13		! source line 453
+	mov	456,r13		! source line 456
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -15894,16 +15894,16 @@ _Label_887:
 	load	[r14+-56],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	454,r13		! source line 454
+	mov	457,r13		! source line 457
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_891
 _Label_888:
 ! ELSE...
-	mov	455,r13		! source line 455
+	mov	458,r13		! source line 458
 	mov	"\0\0EL",r10
 ! IF STATEMENT...
-	mov	455,r13		! source line 455
+	mov	458,r13		! source line 458
 	mov	"\0\0IF",r10
 !   if fd == i then goto _Label_893		(int)
 	load	[r14+-144],r1
@@ -15913,7 +15913,7 @@ _Label_888:
 !	jmp	_Label_892
 _Label_892:
 ! THEN...
-	mov	456,r13		! source line 456
+	mov	459,r13		! source line 459
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_894 = _StringConst_160
@@ -15923,7 +15923,7 @@ _Label_892:
 	load	[r14+-52],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	456,r13		! source line 456
+	mov	459,r13		! source line 459
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -15931,7 +15931,7 @@ _Label_892:
 	load	[r14+-144],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	457,r13		! source line 457
+	mov	460,r13		! source line 460
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -15942,7 +15942,7 @@ _Label_892:
 	load	[r14+-48],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	458,r13		! source line 458
+	mov	461,r13		! source line 461
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -15967,11 +15967,11 @@ _Label_883:
 	load	[r14+-44],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	462,r13		! source line 462
+	mov	465,r13		! source line 465
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	463,r13		! source line 463
+	mov	466,r13		! source line 466
 	mov	"\0\0AS",r10
 !   _temp_897 = _StringConst_163
 	set	_StringConst_163,r1
@@ -15980,14 +15980,14 @@ _Label_883:
 	load	[r14+-40],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	463,r13		! source line 463
+	mov	466,r13		! source line 466
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-144]
 ! IF STATEMENT...
-	mov	464,r13		! source line 464
+	mov	467,r13		! source line 467
 	mov	"\0\0IF",r10
 !   if fd != -1 then goto _Label_899		(int)
 	load	[r14+-144],r1
@@ -15997,7 +15997,7 @@ _Label_883:
 !	jmp	_Label_898
 _Label_898:
 ! THEN...
-	mov	465,r13		! source line 465
+	mov	468,r13		! source line 468
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_900 = _StringConst_164
@@ -16007,13 +16007,13 @@ _Label_898:
 	load	[r14+-36],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	465,r13		! source line 465
+	mov	468,r13		! source line 468
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_901
 _Label_899:
 ! ELSE...
-	mov	467,r13		! source line 467
+	mov	470,r13		! source line 470
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_902 = _StringConst_165
@@ -16023,7 +16023,7 @@ _Label_899:
 	load	[r14+-32],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	467,r13		! source line 467
+	mov	470,r13		! source line 470
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16031,7 +16031,7 @@ _Label_899:
 	load	[r14+-144],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	468,r13		! source line 468
+	mov	471,r13		! source line 471
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -16042,7 +16042,7 @@ _Label_899:
 	load	[r14+-28],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	469,r13		! source line 469
+	mov	472,r13		! source line 472
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -16055,11 +16055,11 @@ _Label_901:
 	load	[r14+-24],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	473,r13		! source line 473
+	mov	476,r13		! source line 476
 	mov	"\0\0CE",r10
 	call	print
 ! FOR STATEMENT...
-	mov	474,r13		! source line 474
+	mov	477,r13		! source line 477
 	mov	"\0\0FO",r10
 !   Calculate and save the FOR-LOOP starting value
 !   _temp_909 = 0		(4 bytes)
@@ -16082,14 +16082,14 @@ _Label_905:
 	bvs	_runtimeErrorOverflow
 	bg	_Label_908
 _Label_906:
-	mov	474,r13		! source line 474
+	mov	477,r13		! source line 477
 	mov	"\0\0FB",r10
 ! CALL STATEMENT...
 !   Prepare Argument: offset=8  value=i  sizeInBytes=4
 	load	[r14+-136],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	475,r13		! source line 475
+	mov	478,r13		! source line 478
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 !   Increment the FOR-LOOP index variable and jump back
@@ -16110,11 +16110,11 @@ _Label_908:
 	load	[r14+-12],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	478,r13		! source line 478
+	mov	481,r13		! source line 481
 	mov	"\0\0CE",r10
 	call	print
 ! RETURN STATEMENT...
-	mov	478,r13		! source line 478
+	mov	481,r13		! source line 481
 	mov	"\0\0RE",r10
 	add	r15,144,r15
 	pop	r13
@@ -16384,7 +16384,7 @@ _Label_1280:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1280
-	mov	484,r13		! source line 484
+	mov	487,r13		! source line 487
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
@@ -16395,7 +16395,7 @@ _Label_1280:
 	load	[r14+-304],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	492,r13		! source line 492
+	mov	495,r13		! source line 495
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16406,7 +16406,7 @@ _Label_1280:
 	load	[r14+-300],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	493,r13		! source line 493
+	mov	496,r13		! source line 496
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16417,11 +16417,11 @@ _Label_1280:
 	load	[r14+-296],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	495,r13		! source line 495
+	mov	498,r13		! source line 498
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	496,r13		! source line 496
+	mov	499,r13		! source line 499
 	mov	"\0\0AS",r10
 !   _temp_950 = _StringConst_172
 	set	_StringConst_172,r1
@@ -16430,14 +16430,14 @@ _Label_1280:
 	load	[r14+-292],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	496,r13		! source line 496
+	mov	499,r13		! source line 499
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-312]
 ! IF STATEMENT...
-	mov	497,r13		! source line 497
+	mov	500,r13		! source line 500
 	mov	"\0\0IF",r10
 !   if fd >= 0 then goto _Label_952		(int)
 	load	[r14+-312],r1
@@ -16448,7 +16448,7 @@ _Label_1280:
 !	jmp	_Label_951
 _Label_951:
 ! THEN...
-	mov	498,r13		! source line 498
+	mov	501,r13		! source line 501
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_953 = _StringConst_173
@@ -16458,11 +16458,11 @@ _Label_951:
 	load	[r14+-288],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	498,r13		! source line 498
+	mov	501,r13		! source line 501
 	mov	"\0\0CE",r10
 	call	print
 ! RETURN STATEMENT...
-	mov	499,r13		! source line 499
+	mov	502,r13		! source line 502
 	mov	"\0\0RE",r10
 	add	r15,332,r15
 	pop	r13
@@ -16478,11 +16478,11 @@ _Label_952:
 	load	[r14+-284],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	502,r13		! source line 502
+	mov	505,r13		! source line 505
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	503,r13		! source line 503
+	mov	506,r13		! source line 506
 	mov	"\0\0AS",r10
 !   _temp_956 = &_Global_bigBuffer
 	set	_Global_bigBuffer,r1
@@ -16519,7 +16519,7 @@ _Label_952:
 	mov	-1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	503,r13		! source line 503
+	mov	506,r13		! source line 506
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -16533,7 +16533,7 @@ _Label_952:
 	mov	-1,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	504,r13		! source line 504
+	mov	507,r13		! source line 507
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! CALL STATEMENT...
@@ -16544,11 +16544,11 @@ _Label_952:
 	load	[r14+-268],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	506,r13		! source line 506
+	mov	509,r13		! source line 509
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	507,r13		! source line 507
+	mov	510,r13		! source line 510
 	mov	"\0\0AS",r10
 !   _temp_960 = &_Global_bigBuffer
 	set	_Global_bigBuffer,r1
@@ -16585,7 +16585,7 @@ _Label_952:
 	set	-123123123,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	507,r13		! source line 507
+	mov	510,r13		! source line 510
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -16599,7 +16599,7 @@ _Label_952:
 	mov	-1,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	508,r13		! source line 508
+	mov	511,r13		! source line 511
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! CALL STATEMENT...
@@ -16610,7 +16610,7 @@ _Label_952:
 	load	[r14+-252],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	510,r13		! source line 510
+	mov	513,r13		! source line 513
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16621,11 +16621,11 @@ _Label_952:
 	load	[r14+-248],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	511,r13		! source line 511
+	mov	514,r13		! source line 514
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	512,r13		! source line 512
+	mov	515,r13		! source line 515
 	mov	"\0\0AS",r10
 !   _temp_964 = main
 	set	main,r1
@@ -16640,14 +16640,14 @@ _Label_952:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	512,r13		! source line 512
+	mov	515,r13		! source line 515
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-308]
 ! IF STATEMENT...
-	mov	514,r13		! source line 514
+	mov	517,r13		! source line 517
 	mov	"\0\0IF",r10
 !   if i == -1 then goto _Label_966		(int)
 	load	[r14+-308],r1
@@ -16663,7 +16663,7 @@ _Label_967:
 !	jmp	_Label_965
 _Label_965:
 ! THEN...
-	mov	515,r13		! source line 515
+	mov	518,r13		! source line 518
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_968 = _StringConst_178
@@ -16673,7 +16673,7 @@ _Label_965:
 	load	[r14+-240],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	515,r13		! source line 515
+	mov	518,r13		! source line 518
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16681,7 +16681,7 @@ _Label_965:
 	load	[r14+-308],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	516,r13		! source line 516
+	mov	519,r13		! source line 519
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -16692,7 +16692,7 @@ _Label_965:
 	load	[r14+-236],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	517,r13		! source line 517
+	mov	520,r13		! source line 520
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -16705,7 +16705,7 @@ _Label_966:
 	mov	97,r1
 	storeb	r1,[r15+4]
 !   Call the function
-	mov	519,r13		! source line 519
+	mov	522,r13		! source line 522
 	mov	"\0\0CA",r10
 	call	_function_243_NextInput
 ! CALL STATEMENT...
@@ -16716,7 +16716,7 @@ _Label_966:
 	load	[r14+-232],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	521,r13		! source line 521
+	mov	524,r13		! source line 524
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16727,11 +16727,11 @@ _Label_966:
 	load	[r14+-228],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	522,r13		! source line 522
+	mov	525,r13		! source line 525
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	523,r13		! source line 523
+	mov	526,r13		! source line 526
 	mov	"\0\0AS",r10
 !   Prepare Argument: offset=8  value=fd  sizeInBytes=4
 	load	[r14+-312],r1
@@ -16743,14 +16743,14 @@ _Label_966:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	523,r13		! source line 523
+	mov	526,r13		! source line 526
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-308]
 ! IF STATEMENT...
-	mov	525,r13		! source line 525
+	mov	528,r13		! source line 528
 	mov	"\0\0IF",r10
 !   if i == -1 then goto _Label_973		(int)
 	load	[r14+-308],r1
@@ -16766,7 +16766,7 @@ _Label_974:
 !	jmp	_Label_972
 _Label_972:
 ! THEN...
-	mov	526,r13		! source line 526
+	mov	529,r13		! source line 529
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_975 = _StringConst_182
@@ -16776,7 +16776,7 @@ _Label_972:
 	load	[r14+-224],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	526,r13		! source line 526
+	mov	529,r13		! source line 529
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16784,7 +16784,7 @@ _Label_972:
 	load	[r14+-308],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	527,r13		! source line 527
+	mov	530,r13		! source line 530
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -16795,7 +16795,7 @@ _Label_972:
 	load	[r14+-220],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	528,r13		! source line 528
+	mov	531,r13		! source line 531
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -16808,11 +16808,11 @@ _Label_973:
 	mov	120,r1
 	storeb	r1,[r15+4]
 !   Call the function
-	mov	530,r13		! source line 530
+	mov	533,r13		! source line 533
 	mov	"\0\0CA",r10
 	call	_function_243_NextInput
 ! ASSIGNMENT STATEMENT...
-	mov	534,r13		! source line 534
+	mov	537,r13		! source line 537
 	mov	"\0\0AS",r10
 !   _temp_978 = &fd
 	add	r14,-312,r1
@@ -16835,7 +16835,7 @@ _Label_973:
 	load	[r14+-208],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	542,r13		! source line 542
+	mov	545,r13		! source line 545
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -16846,11 +16846,11 @@ _Label_973:
 	load	[r14+-204],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	543,r13		! source line 543
+	mov	546,r13		! source line 546
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	544,r13		! source line 544
+	mov	547,r13		! source line 547
 	mov	"\0\0AS",r10
 !   if intIsZero (p) then goto _runtimeErrorNullPointer
 	load	[r14+-316],r1
@@ -16861,7 +16861,7 @@ _Label_973:
 	load	[r1],r1
 	store	r1,[r14+-320]
 ! ASSIGNMENT STATEMENT...
-	mov	545,r13		! source line 545
+	mov	548,r13		! source line 548
 	mov	"\0\0AS",r10
 !   Prepare Argument: offset=8  value=fd  sizeInBytes=4
 	load	[r14+-312],r1
@@ -16873,14 +16873,14 @@ _Label_973:
 	mov	5,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	545,r13		! source line 545
+	mov	548,r13		! source line 548
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-308]
 ! IF STATEMENT...
-	mov	546,r13		! source line 546
+	mov	549,r13		! source line 549
 	mov	"\0\0IF",r10
 !   if i != 4 then goto _Label_982		(int)
 	load	[r14+-308],r1
@@ -16890,10 +16890,10 @@ _Label_973:
 !	jmp	_Label_981
 _Label_981:
 ! THEN...
-	mov	547,r13		! source line 547
+	mov	550,r13		! source line 550
 	mov	"\0\0TN",r10
 ! IF STATEMENT...
-	mov	547,r13		! source line 547
+	mov	550,r13		! source line 550
 	mov	"\0\0IF",r10
 !   if intIsZero (p) then goto _runtimeErrorNullPointer
 	load	[r14+-316],r1
@@ -16911,7 +16911,7 @@ _Label_981:
 !	jmp	_Label_983
 _Label_983:
 ! THEN...
-	mov	548,r13		! source line 548
+	mov	551,r13		! source line 551
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_986 = _StringConst_186
@@ -16921,7 +16921,7 @@ _Label_983:
 	load	[r14+-196],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	548,r13		! source line 548
+	mov	551,r13		! source line 551
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -16934,16 +16934,16 @@ _Label_984:
 	mov	53,r1
 	storeb	r1,[r15+4]
 !   Call the function
-	mov	550,r13		! source line 550
+	mov	553,r13		! source line 553
 	mov	"\0\0CA",r10
 	call	_function_243_NextInput
 	jmp	_Label_987
 _Label_982:
 ! ELSE...
-	mov	551,r13		! source line 551
+	mov	554,r13		! source line 554
 	mov	"\0\0EL",r10
 ! IF STATEMENT...
-	mov	551,r13		! source line 551
+	mov	554,r13		! source line 554
 	mov	"\0\0IF",r10
 !   if i != -1 then goto _Label_989		(int)
 	load	[r14+-308],r1
@@ -16953,10 +16953,10 @@ _Label_982:
 !	jmp	_Label_988
 _Label_988:
 ! THEN...
-	mov	552,r13		! source line 552
+	mov	555,r13		! source line 555
 	mov	"\0\0TN",r10
 ! IF STATEMENT...
-	mov	552,r13		! source line 552
+	mov	555,r13		! source line 555
 	mov	"\0\0IF",r10
 !   if intIsZero (p) then goto _runtimeErrorNullPointer
 	load	[r14+-316],r1
@@ -16974,7 +16974,7 @@ _Label_988:
 !	jmp	_Label_990
 _Label_990:
 ! THEN...
-	mov	553,r13		! source line 553
+	mov	556,r13		! source line 556
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_993 = _StringConst_187
@@ -16984,7 +16984,7 @@ _Label_990:
 	load	[r14+-188],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	553,r13		! source line 553
+	mov	556,r13		! source line 556
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -16997,13 +16997,13 @@ _Label_991:
 	mov	49,r1
 	storeb	r1,[r15+4]
 !   Call the function
-	mov	555,r13		! source line 555
+	mov	558,r13		! source line 558
 	mov	"\0\0CA",r10
 	call	_function_243_NextInput
 	jmp	_Label_994
 _Label_989:
 ! ELSE...
-	mov	557,r13		! source line 557
+	mov	560,r13		! source line 560
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   Prepare Argument: offset=8  value=i  sizeInBytes=4
@@ -17013,7 +17013,7 @@ _Label_989:
 	mov	-1,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	557,r13		! source line 557
+	mov	560,r13		! source line 560
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! END IF...
@@ -17021,7 +17021,7 @@ _Label_994:
 ! END IF...
 _Label_987:
 ! ASSIGNMENT STATEMENT...
-	mov	559,r13		! source line 559
+	mov	562,r13		! source line 562
 	mov	"\0\0AS",r10
 !   if intIsZero (p) then goto _runtimeErrorNullPointer
 	load	[r14+-316],r1
@@ -17032,7 +17032,7 @@ _Label_987:
 	load	[r14+-316],r2
 	store	r1,[r2]
 ! ASSIGNMENT STATEMENT...
-	mov	563,r13		! source line 563
+	mov	566,r13		! source line 566
 	mov	"\0\0AS",r10
 !   _temp_997 = &_Global_bigBuffer
 	set	_Global_bigBuffer,r1
@@ -17071,7 +17071,7 @@ _Label_987:
 	and	r1,r2,r1
 	store	r1,[r14+-316]
 ! ASSIGNMENT STATEMENT...
-	mov	564,r13		! source line 564
+	mov	567,r13		! source line 567
 	mov	"\0\0AS",r10
 !   charPtr = p - 3		(int)
 	load	[r14+-316],r1
@@ -17087,7 +17087,7 @@ _Label_987:
 	load	[r14+-168],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	569,r13		! source line 569
+	mov	572,r13		! source line 572
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17098,7 +17098,7 @@ _Label_987:
 	load	[r14+-164],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	570,r13		! source line 570
+	mov	573,r13		! source line 573
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17147,11 +17147,11 @@ _Label_987:
 	mov	13,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	571,r13		! source line 571
+	mov	574,r13		! source line 574
 	mov	"\0\0CE",r10
 	call	MemoryCopy
 ! ASSIGNMENT STATEMENT...
-	mov	572,r13		! source line 572
+	mov	575,r13		! source line 575
 	mov	"\0\0AS",r10
 !   Prepare Argument: offset=8  value=fd  sizeInBytes=4
 	load	[r14+-312],r1
@@ -17163,7 +17163,7 @@ _Label_987:
 	mov	7,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	572,r13		! source line 572
+	mov	575,r13		! source line 575
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -17177,11 +17177,11 @@ _Label_987:
 	mov	7,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	573,r13		! source line 573
+	mov	576,r13		! source line 576
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! IF STATEMENT...
-	mov	574,r13		! source line 574
+	mov	577,r13		! source line 577
 	mov	"\0\0IF",r10
 !   _temp_1008 = charPtr - 3		(int)
 	load	[r14+-324],r1
@@ -17228,7 +17228,7 @@ _Label_987:
 	mov	13,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	574,r13		! source line 574
+	mov	577,r13		! source line 577
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_MemoryEqual
 !   Retrieve Result: targetName=_temp_1007  sizeInBytes=1
@@ -17241,7 +17241,7 @@ _Label_987:
 	jmp	_Label_1006
 _Label_1005:
 ! THEN...
-	mov	575,r13		! source line 575
+	mov	578,r13		! source line 578
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_1012 = _StringConst_192
@@ -17251,7 +17251,7 @@ _Label_1005:
 	load	[r14+-128],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	575,r13		! source line 575
+	mov	578,r13		! source line 578
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -17264,11 +17264,11 @@ _Label_1006:
 	load	[r14+-124],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	578,r13		! source line 578
+	mov	581,r13		! source line 581
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	579,r13		! source line 579
+	mov	582,r13		! source line 582
 	mov	"\0\0AS",r10
 !   _temp_1015 = &_Global_bigBuffer
 	set	_Global_bigBuffer,r1
@@ -17305,7 +17305,7 @@ _Label_1006:
 	mov	-1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	579,r13		! source line 579
+	mov	582,r13		! source line 582
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -17319,7 +17319,7 @@ _Label_1006:
 	mov	-1,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	580,r13		! source line 580
+	mov	583,r13		! source line 583
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! CALL STATEMENT...
@@ -17330,11 +17330,11 @@ _Label_1006:
 	load	[r14+-108],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	582,r13		! source line 582
+	mov	585,r13		! source line 585
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	583,r13		! source line 583
+	mov	586,r13		! source line 586
 	mov	"\0\0AS",r10
 !   _temp_1019 = &_Global_bigBuffer
 	set	_Global_bigBuffer,r1
@@ -17371,7 +17371,7 @@ _Label_1006:
 	set	-123123123,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	583,r13		! source line 583
+	mov	586,r13		! source line 586
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -17385,7 +17385,7 @@ _Label_1006:
 	mov	-1,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	584,r13		! source line 584
+	mov	587,r13		! source line 587
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! CALL STATEMENT...
@@ -17396,7 +17396,7 @@ _Label_1006:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	586,r13		! source line 586
+	mov	589,r13		! source line 589
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17407,7 +17407,7 @@ _Label_1006:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	587,r13		! source line 587
+	mov	590,r13		! source line 590
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17418,7 +17418,7 @@ _Label_1006:
 	load	[r14+-84],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	588,r13		! source line 588
+	mov	591,r13		! source line 591
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17464,11 +17464,11 @@ _Label_1006:
 	mov	9,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	589,r13		! source line 589
+	mov	592,r13		! source line 592
 	mov	"\0\0CE",r10
 	call	MemoryCopy
 ! ASSIGNMENT STATEMENT...
-	mov	590,r13		! source line 590
+	mov	593,r13		! source line 593
 	mov	"\0\0AS",r10
 !   Prepare Argument: offset=8  value=fd  sizeInBytes=4
 	load	[r14+-312],r1
@@ -17480,7 +17480,7 @@ _Label_1006:
 	mov	9,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	590,r13		! source line 590
+	mov	593,r13		! source line 593
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -17488,7 +17488,7 @@ _Label_1006:
 	store	r1,[r14+-308]
 ! CALL STATEMENT...
 !   Call the function
-	mov	591,r13		! source line 591
+	mov	594,r13		! source line 594
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_nl
 ! CALL STATEMENT...
@@ -17499,7 +17499,7 @@ _Label_1006:
 	mov	9,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	592,r13		! source line 592
+	mov	595,r13		! source line 595
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! CALL STATEMENT...
@@ -17510,7 +17510,7 @@ _Label_1006:
 	load	[r14+-64],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	594,r13		! source line 594
+	mov	597,r13		! source line 597
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17521,7 +17521,7 @@ _Label_1006:
 	load	[r14+-60],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	595,r13		! source line 595
+	mov	598,r13		! source line 598
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17532,11 +17532,11 @@ _Label_1006:
 	load	[r14+-56],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	596,r13		! source line 596
+	mov	599,r13		! source line 599
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	597,r13		! source line 597
+	mov	600,r13		! source line 600
 	mov	"\0\0AS",r10
 !   _temp_1032 = _StringConst_202
 	set	_StringConst_202,r1
@@ -17577,7 +17577,7 @@ _Label_1006:
 	mov	11,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	597,r13		! source line 597
+	mov	600,r13		! source line 600
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -17585,11 +17585,11 @@ _Label_1006:
 	store	r1,[r14+-308]
 ! CALL STATEMENT...
 !   Call the function
-	mov	598,r13		! source line 598
+	mov	601,r13		! source line 601
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_nl
 ! IF STATEMENT...
-	mov	599,r13		! source line 599
+	mov	602,r13		! source line 602
 	mov	"\0\0IF",r10
 !   if i == 11 then goto _Label_1035		(int)
 	load	[r14+-308],r1
@@ -17599,7 +17599,7 @@ _Label_1006:
 !	jmp	_Label_1034
 _Label_1034:
 ! THEN...
-	mov	600,r13		! source line 600
+	mov	603,r13		! source line 603
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_1036 = _StringConst_203
@@ -17609,7 +17609,7 @@ _Label_1034:
 	load	[r14+-40],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	600,r13		! source line 600
+	mov	603,r13		! source line 603
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17617,7 +17617,7 @@ _Label_1034:
 	load	[r14+-308],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	601,r13		! source line 601
+	mov	604,r13		! source line 604
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -17628,7 +17628,7 @@ _Label_1034:
 	load	[r14+-36],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	602,r13		! source line 602
+	mov	605,r13		! source line 605
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -17641,11 +17641,11 @@ _Label_1035:
 	load	[r14+-32],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	605,r13		! source line 605
+	mov	608,r13		! source line 608
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	606,r13		! source line 606
+	mov	609,r13		! source line 609
 	mov	"\0\0AS",r10
 !   Prepare Argument: offset=8  value=fd  sizeInBytes=4
 	load	[r14+-312],r1
@@ -17657,14 +17657,14 @@ _Label_1035:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	606,r13		! source line 606
+	mov	609,r13		! source line 609
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-308]
 ! IF STATEMENT...
-	mov	608,r13		! source line 608
+	mov	611,r13		! source line 611
 	mov	"\0\0IF",r10
 !   if i == -1 then goto _Label_1040		(int)
 	load	[r14+-308],r1
@@ -17680,7 +17680,7 @@ _Label_1041:
 !	jmp	_Label_1039
 _Label_1039:
 ! THEN...
-	mov	609,r13		! source line 609
+	mov	612,r13		! source line 612
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_1042 = _StringConst_206
@@ -17690,7 +17690,7 @@ _Label_1039:
 	load	[r14+-28],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	609,r13		! source line 609
+	mov	612,r13		! source line 612
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -17698,7 +17698,7 @@ _Label_1039:
 	load	[r14+-308],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	610,r13		! source line 610
+	mov	613,r13		! source line 613
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -17709,13 +17709,13 @@ _Label_1039:
 	load	[r14+-24],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	611,r13		! source line 611
+	mov	614,r13		! source line 614
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_1044
 _Label_1040:
 ! ELSE...
-	mov	613,r13		! source line 613
+	mov	616,r13		! source line 616
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_1045 = _StringConst_208
@@ -17725,7 +17725,7 @@ _Label_1040:
 	load	[r14+-20],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	613,r13		! source line 613
+	mov	616,r13		! source line 616
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
@@ -17735,7 +17735,7 @@ _Label_1044:
 	load	[r14+-312],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	616,r13		! source line 616
+	mov	619,r13		! source line 619
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! CALL STATEMENT...
@@ -17746,11 +17746,11 @@ _Label_1044:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	618,r13		! source line 618
+	mov	621,r13		! source line 621
 	mov	"\0\0CE",r10
 	call	print
 ! RETURN STATEMENT...
-	mov	618,r13		! source line 618
+	mov	621,r13		! source line 621
 	mov	"\0\0RE",r10
 	add	r15,332,r15
 	pop	r13
@@ -18335,11 +18335,11 @@ _Label_1281:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1281
-	mov	624,r13		! source line 624
+	mov	627,r13		! source line 627
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! IF STATEMENT...
-	mov	629,r13		! source line 629
+	mov	632,r13		! source line 632
 	mov	"\0\0IF",r10
 !   if i != expectedVal then goto _Label_1128		(int)
 	load	[r14+8],r1
@@ -18349,7 +18349,7 @@ _Label_1281:
 !	jmp	_Label_1127
 _Label_1127:
 ! THEN...
-	mov	630,r13		! source line 630
+	mov	633,r13		! source line 633
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_1129 = _StringConst_210
@@ -18359,13 +18359,13 @@ _Label_1127:
 	load	[r14+-20],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	630,r13		! source line 630
+	mov	633,r13		! source line 633
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_1130
 _Label_1128:
 ! ELSE...
-	mov	632,r13		! source line 632
+	mov	635,r13		! source line 635
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_1131 = _StringConst_211
@@ -18375,7 +18375,7 @@ _Label_1128:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	632,r13		! source line 632
+	mov	635,r13		! source line 635
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -18383,7 +18383,7 @@ _Label_1128:
 	load	[r14+8],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	633,r13		! source line 633
+	mov	636,r13		! source line 636
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -18394,13 +18394,13 @@ _Label_1128:
 	load	[r14+-12],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	634,r13		! source line 634
+	mov	637,r13		! source line 637
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
 _Label_1130:
 ! RETURN STATEMENT...
-	mov	629,r13		! source line 629
+	mov	632,r13		! source line 632
 	mov	"\0\0RE",r10
 	add	r15,20,r15
 	pop	r13
@@ -18467,7 +18467,7 @@ _Label_1282:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1282
-	mov	641,r13		! source line 641
+	mov	644,r13		! source line 644
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! buffer
@@ -18524,7 +18524,7 @@ _Label_1283:
 	sub	r3,1,r3
 	bne	_Label_1283
 ! ASSIGNMENT STATEMENT...
-	mov	652,r13		! source line 652
+	mov	655,r13		! source line 655
 	mov	"\0\0AS",r10
 !   _temp_1144 = &inputChar
 	add	r14,-11,r1
@@ -18539,14 +18539,14 @@ _Label_1283:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	652,r13		! source line 652
+	mov	655,r13		! source line 655
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-180]
 ! IF STATEMENT...
-	mov	653,r13		! source line 653
+	mov	656,r13		! source line 656
 	mov	"\0\0IF",r10
 !   if i == 1 then goto _Label_1146		(int)
 	load	[r14+-180],r1
@@ -18556,7 +18556,7 @@ _Label_1283:
 !	jmp	_Label_1145
 _Label_1145:
 ! THEN...
-	mov	654,r13		! source line 654
+	mov	657,r13		! source line 657
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_1147 = _StringConst_213
@@ -18566,7 +18566,7 @@ _Label_1145:
 	load	[r14+-56],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	654,r13		! source line 654
+	mov	657,r13		! source line 657
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -18574,7 +18574,7 @@ _Label_1145:
 	load	[r14+-180],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	655,r13		! source line 655
+	mov	658,r13		! source line 658
 	mov	"\0\0CE",r10
 	call	printInt
 ! CALL STATEMENT...
@@ -18585,13 +18585,13 @@ _Label_1145:
 	load	[r14+-52],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	656,r13		! source line 656
+	mov	659,r13		! source line 659
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
 _Label_1146:
 ! IF STATEMENT...
-	mov	660,r13		! source line 660
+	mov	663,r13		! source line 663
 	mov	"\0\0IF",r10
 !   _temp_1151 = inputChar XOR expectedChar		(bool)
 	loadb	[r14+-11],r1
@@ -18605,7 +18605,7 @@ _Label_1146:
 	jmp	_Label_1150
 _Label_1149:
 ! THEN...
-	mov	661,r13		! source line 661
+	mov	664,r13		! source line 664
 	mov	"\0\0TN",r10
 ! CALL STATEMENT...
 !   _temp_1152 = _StringConst_215
@@ -18615,13 +18615,13 @@ _Label_1149:
 	load	[r14+-48],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	661,r13		! source line 661
+	mov	664,r13		! source line 664
 	mov	"\0\0CE",r10
 	call	print
 	jmp	_Label_1153
 _Label_1150:
 ! ELSE...
-	mov	663,r13		! source line 663
+	mov	666,r13		! source line 666
 	mov	"\0\0EL",r10
 ! CALL STATEMENT...
 !   _temp_1154 = _StringConst_216
@@ -18631,7 +18631,7 @@ _Label_1150:
 	load	[r14+-44],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	663,r13		! source line 663
+	mov	666,r13		! source line 666
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -18639,7 +18639,7 @@ _Label_1150:
 	loadb	[r14+12],r1
 	storeb	r1,[r15+0]
 !   Call the function
-	mov	664,r13		! source line 664
+	mov	667,r13		! source line 667
 	mov	"\0\0CE",r10
 	call	printChar
 ! CALL STATEMENT...
@@ -18650,7 +18650,7 @@ _Label_1150:
 	load	[r14+-40],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	665,r13		! source line 665
+	mov	668,r13		! source line 668
 	mov	"\0\0CE",r10
 	call	print
 ! CALL STATEMENT...
@@ -18658,7 +18658,7 @@ _Label_1150:
 	loadb	[r14+-11],r1
 	storeb	r1,[r15+0]
 !   Call the function
-	mov	666,r13		! source line 666
+	mov	669,r13		! source line 669
 	mov	"\0\0CE",r10
 	call	printChar
 ! CALL STATEMENT...
@@ -18669,13 +18669,13 @@ _Label_1150:
 	load	[r14+-36],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	667,r13		! source line 667
+	mov	670,r13		! source line 670
 	mov	"\0\0CE",r10
 	call	print
 ! END IF...
 _Label_1153:
 ! IF STATEMENT...
-	mov	671,r13		! source line 671
+	mov	674,r13		! source line 674
 	mov	"\0\0IF",r10
 !   _temp_1159 = inputChar XOR 10		(bool)
 	loadb	[r14+-11],r1
@@ -18689,10 +18689,10 @@ _Label_1153:
 	jmp	_Label_1157
 _Label_1157:
 ! THEN...
-	mov	672,r13		! source line 672
+	mov	675,r13		! source line 675
 	mov	"\0\0TN",r10
 ! ASSIGNMENT STATEMENT...
-	mov	672,r13		! source line 672
+	mov	675,r13		! source line 675
 	mov	"\0\0AS",r10
 !   _temp_1161 = &buffer
 	add	r14,-284,r1
@@ -18736,7 +18736,7 @@ _Label_1157:
 	load	[r14+-20],r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	672,r13		! source line 672
+	mov	675,r13		! source line 675
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -18745,7 +18745,7 @@ _Label_1157:
 ! END IF...
 _Label_1158:
 ! RETURN STATEMENT...
-	mov	671,r13		! source line 671
+	mov	674,r13		! source line 674
 	mov	"\0\0RE",r10
 	add	r15,292,r15
 	pop	r13
@@ -18938,7 +18938,7 @@ _Label_1284:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1284
-	mov	682,r13		! source line 682
+	mov	685,r13		! source line 685
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! CALL STATEMENT...
@@ -18949,11 +18949,11 @@ _Label_1284:
 	load	[r14+-96],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	689,r13		! source line 689
+	mov	692,r13		! source line 692
 	mov	"\0\0CE",r10
 	call	print
 ! ASSIGNMENT STATEMENT...
-	mov	690,r13		! source line 690
+	mov	693,r13		! source line 693
 	mov	"\0\0AS",r10
 !   _temp_1190 = _StringConst_220
 	set	_StringConst_220,r1
@@ -18962,7 +18962,7 @@ _Label_1284:
 	load	[r14+-92],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	690,r13		! source line 690
+	mov	693,r13		! source line 693
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
@@ -18976,11 +18976,11 @@ _Label_1284:
 	mov	0,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	691,r13		! source line 691
+	mov	694,r13		! source line 694
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! ASSIGNMENT STATEMENT...
-	mov	692,r13		! source line 692
+	mov	695,r13		! source line 695
 	mov	"\0\0AS",r10
 !   _temp_1191 = _StringConst_221
 	set	_StringConst_221,r1
@@ -18989,7 +18989,7 @@ _Label_1284:
 	load	[r14+-88],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	692,r13		! source line 692
+	mov	695,r13		! source line 695
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
@@ -19003,7 +19003,7 @@ _Label_1284:
 	mov	1,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	693,r13		! source line 693
+	mov	696,r13		! source line 696
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! CALL STATEMENT...
@@ -19014,16 +19014,16 @@ _Label_1284:
 	load	[r14+-84],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	694,r13		! source line 694
+	mov	697,r13		! source line 697
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! WHILE STATEMENT...
-	mov	695,r13		! source line 695
+	mov	698,r13		! source line 698
 	mov	"\0\0WH",r10
 _Label_1193:
 !	jmp	_Label_1194
 _Label_1194:
-	mov	695,r13		! source line 695
+	mov	698,r13		! source line 698
 	mov	"\0\0WB",r10
 ! CALL STATEMENT...
 !   _temp_1196 = _StringConst_223
@@ -19033,7 +19033,7 @@ _Label_1194:
 	load	[r14+-80],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	696,r13		! source line 696
+	mov	699,r13		! source line 699
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19044,7 +19044,7 @@ _Label_1194:
 	load	[r14+-76],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	697,r13		! source line 697
+	mov	700,r13		! source line 700
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19055,7 +19055,7 @@ _Label_1194:
 	load	[r14+-72],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	698,r13		! source line 698
+	mov	701,r13		! source line 701
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19066,7 +19066,7 @@ _Label_1194:
 	load	[r14+-68],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	699,r13		! source line 699
+	mov	702,r13		! source line 702
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19077,7 +19077,7 @@ _Label_1194:
 	load	[r14+-64],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	700,r13		! source line 700
+	mov	703,r13		! source line 703
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19088,7 +19088,7 @@ _Label_1194:
 	load	[r14+-60],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	701,r13		! source line 701
+	mov	704,r13		! source line 704
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19099,7 +19099,7 @@ _Label_1194:
 	load	[r14+-56],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	702,r13		! source line 702
+	mov	705,r13		! source line 705
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19110,7 +19110,7 @@ _Label_1194:
 	load	[r14+-52],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	703,r13		! source line 703
+	mov	706,r13		! source line 706
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19121,7 +19121,7 @@ _Label_1194:
 	load	[r14+-48],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	704,r13		! source line 704
+	mov	707,r13		! source line 707
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19132,7 +19132,7 @@ _Label_1194:
 	load	[r14+-44],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	705,r13		! source line 705
+	mov	708,r13		! source line 708
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19143,14 +19143,14 @@ _Label_1194:
 	load	[r14+-40],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	706,r13		! source line 706
+	mov	709,r13		! source line 709
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! ASSIGNMENT STATEMENT...
-	mov	707,r13		! source line 707
+	mov	710,r13		! source line 710
 	mov	"\0\0AS",r10
 !   Call the function
-	mov	707,r13		! source line 707
+	mov	710,r13		! source line 710
 	mov	"\0\0CA",r10
 	call	_function_240_GetChar
 !   Retrieve Result: targetName=c  sizeInBytes=1
@@ -19161,7 +19161,7 @@ _Label_1194:
 	loadb	[r14+-9],r1
 	storeb	r1,[r15+0]
 !   Call the function
-	mov	708,r13		! source line 708
+	mov	711,r13		! source line 711
 	mov	"\0\0CA",r10
 	call	_function_239_PutChar
 ! CALL STATEMENT...
@@ -19169,11 +19169,11 @@ _Label_1194:
 	mov	10,r1
 	storeb	r1,[r15+0]
 !   Call the function
-	mov	709,r13		! source line 709
+	mov	712,r13		! source line 712
 	mov	"\0\0CA",r10
 	call	_function_239_PutChar
 ! SWITCH STATEMENT (using an indirect jump table)...
-	mov	710,r13		! source line 710
+	mov	713,r13		! source line 713
 	mov	"\0\0SW",r10
 !   Evaluate the switch expression...
 !   _temp_1218 = charToInt (c)
@@ -19218,55 +19218,55 @@ _Label_1219:
 _Label_1209:
 ! CALL STATEMENT...
 !   Call the function
-	mov	712,r13		! source line 712
+	mov	715,r13		! source line 715
 	mov	"\0\0CA",r10
 	call	_function_251_BasicSerialTest
 ! BREAK STATEMENT...
-	mov	713,r13		! source line 713
+	mov	716,r13		! source line 716
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 50...
 _Label_1210:
 ! CALL STATEMENT...
 !   Call the function
-	mov	715,r13		! source line 715
+	mov	718,r13		! source line 718
 	mov	"\0\0CA",r10
 	call	_function_250_KeyTest
 ! BREAK STATEMENT...
-	mov	716,r13		! source line 716
+	mov	719,r13		! source line 719
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 51...
 _Label_1211:
 ! CALL STATEMENT...
 !   Call the function
-	mov	718,r13		! source line 718
+	mov	721,r13		! source line 721
 	mov	"\0\0CA",r10
 	call	_function_249_EchoTest
 ! BREAK STATEMENT...
-	mov	719,r13		! source line 719
+	mov	722,r13		! source line 722
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 52...
 _Label_1212:
 ! CALL STATEMENT...
 !   Call the function
-	mov	721,r13		! source line 721
+	mov	724,r13		! source line 724
 	mov	"\0\0CA",r10
 	call	_function_248_LineEchoTest
 ! BREAK STATEMENT...
-	mov	722,r13		! source line 722
+	mov	725,r13		! source line 725
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 53...
 _Label_1213:
 ! CALL STATEMENT...
 !   Call the function
-	mov	724,r13		! source line 724
+	mov	727,r13		! source line 727
 	mov	"\0\0CA",r10
 	call	_function_247_EOFTest
 ! BREAK STATEMENT...
-	mov	725,r13		! source line 725
+	mov	728,r13		! source line 728
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 54...
@@ -19276,7 +19276,7 @@ _Label_1214:
 	mov	0,r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	727,r13		! source line 727
+	mov	730,r13		! source line 730
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! CALL STATEMENT...
@@ -19284,16 +19284,16 @@ _Label_1214:
 	mov	1,r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	728,r13		! source line 728
+	mov	731,r13		! source line 731
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Close
 ! CALL STATEMENT...
 !   Call the function
-	mov	729,r13		! source line 729
+	mov	732,r13		! source line 732
 	mov	"\0\0CA",r10
 	call	_function_246_OpenCloseTerminalTest
 ! ASSIGNMENT STATEMENT...
-	mov	730,r13		! source line 730
+	mov	733,r13		! source line 733
 	mov	"\0\0AS",r10
 !   _temp_1220 = _StringConst_234
 	set	_StringConst_234,r1
@@ -19302,7 +19302,7 @@ _Label_1214:
 	load	[r14+-32],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	730,r13		! source line 730
+	mov	733,r13		! source line 733
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
@@ -19316,11 +19316,11 @@ _Label_1214:
 	mov	0,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	731,r13		! source line 731
+	mov	734,r13		! source line 734
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! ASSIGNMENT STATEMENT...
-	mov	732,r13		! source line 732
+	mov	735,r13		! source line 735
 	mov	"\0\0AS",r10
 !   _temp_1221 = _StringConst_235
 	set	_StringConst_235,r1
@@ -19329,7 +19329,7 @@ _Label_1214:
 	load	[r14+-28],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	732,r13		! source line 732
+	mov	735,r13		! source line 735
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Open
 !   Retrieve Result: targetName=fd  sizeInBytes=4
@@ -19343,38 +19343,38 @@ _Label_1214:
 	mov	1,r1
 	store	r1,[r15+4]
 !   Call the function
-	mov	733,r13		! source line 733
+	mov	736,r13		! source line 736
 	mov	"\0\0CA",r10
 	call	_function_244_Check
 ! BREAK STATEMENT...
-	mov	734,r13		! source line 734
+	mov	737,r13		! source line 737
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 55...
 _Label_1215:
 ! CALL STATEMENT...
 !   Call the function
-	mov	736,r13		! source line 736
+	mov	739,r13		! source line 739
 	mov	"\0\0CA",r10
 	call	_function_245_TerminalErrorTest
 ! BREAK STATEMENT...
-	mov	737,r13		! source line 737
+	mov	740,r13		! source line 740
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 56...
 _Label_1216:
 ! ASSIGNMENT STATEMENT...
-	mov	739,r13		! source line 739
+	mov	742,r13		! source line 742
 	mov	"\0\0AS",r10
 !   Call the function
-	mov	739,r13		! source line 739
+	mov	742,r13		! source line 742
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Fork
 !   Retrieve Result: targetName=pid  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-104]
 ! IF STATEMENT...
-	mov	740,r13		! source line 740
+	mov	743,r13		! source line 743
 	mov	"\0\0IF",r10
 !   if intIsZero (pid) then goto _Label_1222
 	load	[r14+-104],r1
@@ -19383,10 +19383,10 @@ _Label_1216:
 	jmp	_Label_1223
 _Label_1222:
 ! THEN...
-	mov	741,r13		! source line 741
+	mov	744,r13		! source line 744
 	mov	"\0\0TN",r10
 ! ASSIGNMENT STATEMENT...
-	mov	741,r13		! source line 741
+	mov	744,r13		! source line 744
 	mov	"\0\0AS",r10
 !   _temp_1224 = _StringConst_236
 	set	_StringConst_236,r1
@@ -19395,7 +19395,7 @@ _Label_1222:
 	load	[r14+-24],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	741,r13		! source line 741
+	mov	744,r13		! source line 744
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Exec
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -19409,7 +19409,7 @@ _Label_1222:
 	load	[r14+-20],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	742,r13		! source line 742
+	mov	745,r13		! source line 745
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! CALL STATEMENT...
@@ -19417,22 +19417,22 @@ _Label_1222:
 	mov	-1,r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	743,r13		! source line 743
+	mov	746,r13		! source line 746
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Exit
 	jmp	_Label_1226
 _Label_1223:
 ! ELSE...
-	mov	745,r13		! source line 745
+	mov	748,r13		! source line 748
 	mov	"\0\0EL",r10
 ! ASSIGNMENT STATEMENT...
-	mov	745,r13		! source line 745
+	mov	748,r13		! source line 748
 	mov	"\0\0AS",r10
 !   Prepare Argument: offset=8  value=pid  sizeInBytes=4
 	load	[r14+-104],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	745,r13		! source line 745
+	mov	748,r13		! source line 748
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Join
 !   Retrieve Result: targetName=i  sizeInBytes=4
@@ -19441,14 +19441,14 @@ _Label_1223:
 ! END IF...
 _Label_1226:
 ! BREAK STATEMENT...
-	mov	747,r13		! source line 747
+	mov	750,r13		! source line 750
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! CASE 57...
 _Label_1217:
 ! CALL STATEMENT...
 !   Call the function
-	mov	749,r13		! source line 749
+	mov	752,r13		! source line 752
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Shutdown
 ! DEFAULT CASE...
@@ -19461,11 +19461,11 @@ _Label_1207:
 	load	[r14+-16],r1
 	store	r1,[r15+0]
 !   Call the function
-	mov	751,r13		! source line 751
+	mov	754,r13		! source line 754
 	mov	"\0\0CA",r10
 	call	_function_241_Print
 ! BREAK STATEMENT...
-	mov	752,r13		! source line 752
+	mov	755,r13		! source line 755
 	mov	"\0\0BR",r10
 	jmp	_Label_1208
 ! END SWITCH...
@@ -19674,11 +19674,11 @@ _Label_1286:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1286
-	mov	760,r13		! source line 760
+	mov	763,r13		! source line 763
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! ASSIGNMENT STATEMENT...
-	mov	765,r13		! source line 765
+	mov	768,r13		! source line 768
 	mov	"\0\0AS",r10
 !   if intIsZero (str) then goto _runtimeErrorNullPointer
 	load	[r14+8],r1
@@ -19724,14 +19724,14 @@ _Label_1286:
 	load	[r14+-12],r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	765,r13		! source line 765
+	mov	768,r13		! source line 768
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-24]
 ! RETURN STATEMENT...
-	mov	765,r13		! source line 765
+	mov	768,r13		! source line 768
 	mov	"\0\0RE",r10
 	add	r15,32,r15
 	pop	r13
@@ -19798,11 +19798,11 @@ _Label_1287:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1287
-	mov	770,r13		! source line 770
+	mov	773,r13		! source line 773
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! ASSIGNMENT STATEMENT...
-	mov	776,r13		! source line 776
+	mov	779,r13		! source line 779
 	mov	"\0\0AS",r10
 !   _temp_1263 = &c
 	add	r14,-9,r1
@@ -19817,14 +19817,14 @@ _Label_1287:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	776,r13		! source line 776
+	mov	779,r13		! source line 779
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Read
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-20]
 ! RETURN STATEMENT...
-	mov	777,r13		! source line 777
+	mov	780,r13		! source line 780
 	mov	"\0\0RE",r10
 !   ReturnResult: c  (sizeInBytes=1)
 	loadb	[r14+-9],r1
@@ -19880,11 +19880,11 @@ _Label_1288:
 	push	r0
 	sub	r1,1,r1
 	bne	_Label_1288
-	mov	782,r13		! source line 782
+	mov	785,r13		! source line 785
 	mov	"\0\0FU",r10
 ! VARIABLE INITIALIZATION...
 ! ASSIGNMENT STATEMENT...
-	mov	787,r13		! source line 787
+	mov	790,r13		! source line 790
 	mov	"\0\0AS",r10
 !   _temp_1268 = &c
 	add	r14,8,r1
@@ -19899,14 +19899,14 @@ _Label_1288:
 	mov	1,r1
 	store	r1,[r15+8]
 !   Call the function
-	mov	787,r13		! source line 787
+	mov	790,r13		! source line 790
 	mov	"\0\0CA",r10
 	call	_P_UserSystem_Sys_Write
 !   Retrieve Result: targetName=i  sizeInBytes=4
 	load	[r15],r1
 	store	r1,[r14+-16]
 ! RETURN STATEMENT...
-	mov	787,r13		! source line 787
+	mov	790,r13		! source line 790
 	mov	"\0\0RE",r10
 	add	r15,24,r15
 	pop	r13

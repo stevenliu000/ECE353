@@ -2157,32 +2157,28 @@ code Kernel
           virtPage = temp asInteger / PAGE_SIZE
           virtAddr = temp asInteger
 
-          --check for error
-          if virtPage < 0 || virtPage > currentThread.myProcess.addrSpace.numberOfPages-1 || currentThread.myProcess.addrSpace.IsValid(virtPage) == false || currentThread.myProcess.addrSpace.IsWritable(virtPage) == false
-            return -1
+          -- check for error
+          if (virtPage < 0 || virtPage > currentThread.myProcess.addrSpace.numberOfPages-1) || currentThread.myProcess.addrSpace.IsValid(virtPage)==false || currentThread.myProcess.addrSpace.IsWritable(virtPage)==false
+              return -1 
           endIf
-
-          temp = temp + 1
+          
+          temp = temp+1
         endFor
-
         copiedSoFar = 0
         for i = 0 to sizeInBytes-1
-          virtPage = temp asInteger / PAGE_SIZE
-          virtAddr = temp asInteger
-
-          --check for error
-          if virtPage < 0 || virtPage > currentThread.myProcess.addrSpace.numberOfPages-1 || currentThread.myProcess.addrSpace.IsValid(virtPage) == false || currentThread.myProcess.addrSpace.IsWritable(virtPage) == false
-            return -1
+          virtPage = buffer asInteger / PAGE_SIZE
+          virtAddr = buffer asInteger
+          if (virtPage < 0 || virtPage > currentThread.myProcess.addrSpace.numberOfPages-1) || currentThread.myProcess.addrSpace.IsValid(virtPage)==false || currentThread.myProcess.addrSpace.IsWritable(virtPage)==false
+              return -1 -- error
           endIf
-
           offset = virtAddr % PAGE_SIZE
           destAddr = currentThread.myProcess.addrSpace.ExtractFrameAddr(virtPage) + offset
           ch = *(destAddr asPtrTo char)
-          if ch == '\n'
+          if ch=='\n'
             serialDriver.PutChar('\r')
           endIf
           serialDriver.PutChar(ch)
-          copiedSoFar = copiedSoFar +1
+          copiedSoFar = copiedSoFar + 1
           buffer = buffer + 1
         endFor
         return copiedSoFar
